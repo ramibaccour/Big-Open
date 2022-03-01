@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{EEC63E65-A0F6-457B-AC7B-25D5FB9B617B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GestionCommerciale", "GestionCommerciale", "{3C847451-54BA-45AC-B885-1FB4BCFBE7D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionCommerciale", "Services\GestionCommerciale\GestionCommerciale\GestionCommerciale.csproj", "{E16E5DAB-7BD1-459C-BE20-B235BC360B6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GestionComptes", "GestionComptes", "{11AC5371-72FA-4DED-879F-1C0C9CDAF035}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionComptes", "Servises\GestionComptes\GestionComptes\GestionComptes.csproj", "{B29B4B4C-DA4B-452F-AF95-1DC5B227C3FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E16E5DAB-7BD1-459C-BE20-B235BC360B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E16E5DAB-7BD1-459C-BE20-B235BC360B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E16E5DAB-7BD1-459C-BE20-B235BC360B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E16E5DAB-7BD1-459C-BE20-B235BC360B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B29B4B4C-DA4B-452F-AF95-1DC5B227C3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29B4B4C-DA4B-452F-AF95-1DC5B227C3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29B4B4C-DA4B-452F-AF95-1DC5B227C3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29B4B4C-DA4B-452F-AF95-1DC5B227C3FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C847451-54BA-45AC-B885-1FB4BCFBE7D0} = {EEC63E65-A0F6-457B-AC7B-25D5FB9B617B}
+		{E16E5DAB-7BD1-459C-BE20-B235BC360B6A} = {3C847451-54BA-45AC-B885-1FB4BCFBE7D0}
+		{11AC5371-72FA-4DED-879F-1C0C9CDAF035} = {EEC63E65-A0F6-457B-AC7B-25D5FB9B617B}
+		{B29B4B4C-DA4B-452F-AF95-1DC5B227C3FC} = {11AC5371-72FA-4DED-879F-1C0C9CDAF035}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE7B2E0C-0872-4AD4-B229-1D01E8F41642}
+	EndGlobalSection
+EndGlobal
