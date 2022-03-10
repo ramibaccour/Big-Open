@@ -1,7 +1,11 @@
+using GestionComptes.Models;
+using GestionComptes.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.Configure<DataBaseSettings>(builder.Configuration.GetSection("DataBase"));
+builder.Services.AddSingleton<SosietesServices>();
+builder.Services.AddScoped<ISosietesServices, SosietesServices>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
