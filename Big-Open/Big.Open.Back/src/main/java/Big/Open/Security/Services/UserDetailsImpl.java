@@ -1,4 +1,4 @@
-package Big.Open.Security.Services;
+package big.open.security.services;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import Big.Open.Entity.User;
+import big.open.entity.User;
 
 public class UserDetailsImpl implements UserDetails 
 {

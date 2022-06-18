@@ -1,4 +1,4 @@
-package Big.Open.Security.jwt;
+package big.open.security.jwt;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

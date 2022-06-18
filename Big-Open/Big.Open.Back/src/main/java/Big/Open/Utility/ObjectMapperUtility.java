@@ -1,4 +1,4 @@
-package Big.Open.Utility;
+package big.open.utility;
 
 import java.util.Collection;
 import java.util.List;

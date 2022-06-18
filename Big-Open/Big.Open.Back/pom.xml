@@ -8,11 +8,11 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>Big.Open.Back</groupId>
-	<artifactId>Big.Open.Back</artifactId>
+	<groupId>big.open.back</groupId>
+	<artifactId>big.open.back</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Big.Open.Back</name>
-	<description>ERP</description>
+	<name>big.open.back</name>
+	<description>ERP big.open back</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

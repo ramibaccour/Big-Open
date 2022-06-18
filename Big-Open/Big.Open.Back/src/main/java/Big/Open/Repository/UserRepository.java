@@ -1,14 +1,14 @@
-package Big.Open.Repository;
+package big.open.repository;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import Big.Open.Entity.User;
+import big.open.entity.User;
 
 
 @Repository
 public interface UserRepository extends JpaRepository<User , Integer>
 {
-	Optional<User> findByUsernameAndIsArchived(String username, Integer isArchived);
+	Optional<User> findByUsername(String username);
 }

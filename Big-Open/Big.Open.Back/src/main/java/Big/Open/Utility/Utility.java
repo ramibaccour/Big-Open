@@ -1,4 +1,4 @@
-package Big.Open.Utility;
+package big.open.utility;
 
 import java.time.LocalDateTime;
 import java.util.Random;

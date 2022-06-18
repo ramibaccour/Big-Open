@@ -1,4 +1,4 @@
-package Big.Open;
+package big.open;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

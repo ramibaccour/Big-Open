@@ -1,4 +1,4 @@
-package Big.Open.Entity;
+package big.open.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

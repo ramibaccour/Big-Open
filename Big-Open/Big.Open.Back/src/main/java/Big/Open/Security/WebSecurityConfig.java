@@ -1,4 +1,4 @@
-package Big.Open.Security;
+package big.open.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,9 +13,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import Big.Open.Security.Services.UserDetailsServiceImpl;
-import Big.Open.Security.jwt.AuthEntryPointJwt;
-import Big.Open.Security.jwt.AuthTokenFilter;
+import big.open.security.services.UserDetailsServiceImpl;
+import big.open.security.jwt.AuthEntryPointJwt;
+import big.open.security.jwt.AuthTokenFilter;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(

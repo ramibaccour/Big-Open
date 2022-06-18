@@ -1,4 +1,4 @@
-package Big.Open.Utility;
+package big.open.utility;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package Big.Open.Security.jwt;
+package big.open.security.jwt;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import Big.Open.Security.Services.UserDetailsImpl;
+import big.open.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 @Component
 public class JwtUtils 

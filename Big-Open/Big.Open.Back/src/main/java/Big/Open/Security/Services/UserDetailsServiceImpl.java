@@ -1,4 +1,4 @@
-package Big.Open.Security.Services;
+package big.open.security.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import Big.Open.Entity.User;
-import Big.Open.Repository.UserRepository;
+import big.open.entity.User;
+import big.open.repository.UserRepository;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService 
 {
@@ -17,7 +17,7 @@ public class UserDetailsServiceImpl implements UserDetailsService
 	@Transactional
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException 
 	{
-		User user = userRepository.findByUsernameAndIsArchived(username, 0)
+		User user = userRepository.findByUsername(username)
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
 		return UserDetailsImpl.build(user);
 	}
