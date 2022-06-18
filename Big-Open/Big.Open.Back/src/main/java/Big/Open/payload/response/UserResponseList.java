@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 public class UserResponseList 
 {
 	private List<UserResponse> listUserResponse;
-	private Long count ;
+	private Long count;
 	private String message;
 	public UserResponseList(List<UserResponse> listUserResponse, Long count) 
 	{

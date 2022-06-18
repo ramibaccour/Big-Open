@@ -1,10 +1,7 @@
 package big.open.service;
-
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import big.open.entity.User;
 import big.open.payload.request.UserRequest;
 import big.open.payload.response.UserResponse;
@@ -30,10 +27,10 @@ public class UserService
 		}
 		return new UserResponseFindById("User not found");
 	}
-	public UserResponseSave save(UserRequest userRequestSave)
+	public UserResponseSave save(UserRequest userRequest)
 	{
 		
-		UserResponseError userResponseError = checkUserResponseError(userRequestSave);
+		UserResponseError userResponseError = checkUserResponseError(userRequest);
 		
 		if(!userResponseError.isHaveError())
 		{		
@@ -43,7 +40,7 @@ public class UserService
 		{
 			try
 			{
-				var user = userRepository.save(ObjectMapperUtility.map(userRequestSave, User.class));
+				User user = userRepository.save(ObjectMapperUtility.map(userRequest, User.class));
 				return  new UserResponseSave(ObjectMapperUtility.map(user, UserResponse.class));
 			}
 			catch(Exception e)
@@ -69,18 +66,16 @@ public class UserService
 		{
 			return "Erreur de suppression";
 		}
-		
 	}
-	private UserResponseError checkUserResponseError (UserRequest userRequestSave)
+	private UserResponseError checkUserResponseError (UserRequest userRequest)
 	{	
 		UserResponseError userResponseError = new UserResponseError();
 		userResponseError.setHaveError(false);
-		if(Utility.isEmpty(userRequestSave.getUsername()) )
+		if(Utility.isEmpty(userRequest.getUsername()) )
 		{
 			userResponseError.setHaveError(true);
 			userResponseError.setUsername("Le nom d'utilisateur est obligatoire");
 		}
-		
 		return userResponseError;
 	}
 }

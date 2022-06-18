@@ -11,5 +11,6 @@ public class UserResponseError
 	private String username;
 	private String password;
 	private String IdSociete;
+	private String isDeleted;
 	private boolean haveError;
 }

@@ -1,7 +1,5 @@
 package big.open.controller;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,13 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import big.open.payload.request.UserRequest;
 import big.open.payload.response.UserResponseFindById;
 import big.open.payload.response.UserResponseSave;
 import big.open.service.UserService;
 import lombok.AllArgsConstructor;
-
 @AllArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -34,9 +30,9 @@ public class UserController
 	}
 	
 	@PostMapping("/save")
-	public ResponseEntity<UserResponseSave> save(@Valid @RequestBody UserRequest userRequestSave) 
+	public ResponseEntity<UserResponseSave> save(@Valid @RequestBody UserRequest userRequest) 
 	{
-		return ResponseEntity.ok(userService.save(userRequestSave));
+		return ResponseEntity.ok(userService.save(userRequest));
 	}
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<String> delete(@PathVariable("id") Integer id)

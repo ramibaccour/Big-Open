@@ -11,6 +11,7 @@ public class UserRequest
 	private String username;
 	private String password;
 	private int IdSociete;
+	private Integer isDeleted;
 	public UserRequest(Integer id) 
 	{
 		super();
