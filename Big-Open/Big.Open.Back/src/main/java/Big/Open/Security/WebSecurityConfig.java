@@ -51,12 +51,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 			.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 			.authorizeRequests().antMatchers(
-					"/uploads/files/**",
-					"/api/user/signinClient",
-					"/api/user/signinUser",
-					"/api/user/saveUserClient",
-					"/api/user/existsByPhone",
-					"/api/test/**").permitAll()
+				"/api/user/save",
+				"/api/user/signin",
+				"/api/test/**").permitAll()			
 			.antMatchers("/api/test/**").permitAll()
 			.anyRequest().authenticated();
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

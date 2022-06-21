@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class UserRequest 
 {
-	private int id;
+	private Integer id;
 	private String username;
 	private String password;
-	private int IdSociete;
+	private Integer idSociete;
 	private Integer isDeleted;
 	public UserRequest(Integer id) 
 	{

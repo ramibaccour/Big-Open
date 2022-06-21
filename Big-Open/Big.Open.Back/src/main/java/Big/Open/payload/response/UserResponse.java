@@ -9,8 +9,8 @@ public class UserResponse
 {
 	private Integer id;
 	private String username;
-	private String password;
-	private Integer IdSociete;
+	private Integer idSociete;
+	private Integer isDeleted;
 	public UserResponse(Integer id) 
 	{
 		super();

@@ -5,10 +5,7 @@ import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
-
-import big.open.security.services.UserDetailsImpl;
 import io.jsonwebtoken.*;
 @Component
 public class JwtUtils 
@@ -18,11 +15,10 @@ public class JwtUtils
 	private String jwtSecret;
 	@Value("${bezkoder.app.jwtExpirationMs}")
 	private int jwtExpirationMs;
-	public String generateJwtToken(Authentication authentication) 
+	public String generateJwtToken(String username) 
 	{
-		UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
 		var builder = Jwts.builder();
-		builder.setSubject((userPrincipal.getUsername()));
+		builder.setSubject((username));
 		builder.setIssuedAt(new Date());
 		builder.setExpiration(new Date((new Date()).getTime() + jwtExpirationMs));
 		builder.signWith(SignatureAlgorithm.HS512, jwtSecret);

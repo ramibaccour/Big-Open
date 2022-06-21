@@ -13,5 +13,5 @@ public class UserRequestList
 	private String username;
 	private String password;
 	private Integer isDeleted;
-	private Integer IdSociete;
+	private Integer idSociete;
 }

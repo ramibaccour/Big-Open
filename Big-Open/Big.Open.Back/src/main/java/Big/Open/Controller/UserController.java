@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import big.open.payload.request.UserRequest;
 import big.open.payload.response.UserResponseFindById;
 import big.open.payload.response.UserResponseSave;
+import big.open.payload.response.UserResponseSignin;
 import big.open.service.UserService;
 import lombok.AllArgsConstructor;
 @AllArgsConstructor
@@ -28,7 +29,11 @@ public class UserController
 	{
 		return ResponseEntity.ok(userService.findById(id));
 	}
-	
+	@PostMapping("/signin")
+	public ResponseEntity<UserResponseSignin> signin(@Valid @RequestBody UserRequest userRequestSigninUser) 
+	{
+		return ResponseEntity.ok(userService.signin(userRequestSigninUser));
+	}
 	@PostMapping("/save")
 	public ResponseEntity<UserResponseSave> save(@Valid @RequestBody UserRequest userRequest) 
 	{
