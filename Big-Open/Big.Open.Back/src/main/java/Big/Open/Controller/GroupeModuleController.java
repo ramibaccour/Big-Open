@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import big.open.payload.request.UserRequest;
-import big.open.payload.response.UserResponseFindById;
-import big.open.payload.response.UserResponseSave;
-import big.open.service.UserService;
+import big.open.payload.request.GroupeModuleRequest;
+import big.open.payload.response.GroupeModuleResponseFindById;
+import big.open.payload.response.GroupeModuleResponseSave;
+import big.open.service.GroupeModuleService;
 import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/user")
-public class UserController 
+@RequestMapping("/api/groupe_module")
+public class GroupeModuleController 
 {
 	@Autowired
-	UserService userService;
+	GroupeModuleService groupeModuleService;
 	@GetMapping("/findById/{id}")
-	public ResponseEntity<UserResponseFindById> findById(@PathVariable("id") Integer id)
+	public ResponseEntity<GroupeModuleResponseFindById> findById(@PathVariable("id") Integer id)
 	{
-		return ResponseEntity.ok(userService.findById(id));
+		return ResponseEntity.ok(groupeModuleService.findById(id));
 	}
 	@PostMapping("/save")
-	public ResponseEntity<UserResponseSave> save(@Valid @RequestBody UserRequest userRequest) 
+	public ResponseEntity<GroupeModuleResponseSave> save(@Valid @RequestBody GroupeModuleRequest groupeModuleRequest) 
 	{
-		return ResponseEntity.ok(userService.save(userRequest));
+		return ResponseEntity.ok(groupeModuleService.save(groupeModuleRequest));
 	}
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<String> delete(@PathVariable("id") Integer id)
 	{
-		return ResponseEntity.ok(userService.delete(id));
+		return ResponseEntity.ok(groupeModuleService.delete(id));
 	}
 }

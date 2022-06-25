@@ -1,9 +1,9 @@
 package big.open.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import big.open.entity.User;
+import big.open.entity.Societe;
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>
+public interface SocieteRepository extends JpaRepository<Societe, Integer>
 {
 	
 }

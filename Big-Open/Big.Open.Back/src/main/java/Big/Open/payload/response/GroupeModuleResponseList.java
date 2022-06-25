@@ -6,15 +6,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UserResponseList
+public class GroupeModuleResponseList
 {
-	private List<UserResponse> listUserResponse;
+	private List<GroupeModuleResponse> listGroupeModuleResponse;
 	private Long count;
 	private String message;
-	public UserResponseList(List<UserResponse> listUserResponse, Long count)
+	public GroupeModuleResponseList(List<GroupeModuleResponse> listGroupeModuleResponse, Long count)
 	{
 		super();
-		this.listUserResponse = listUserResponse;
+		this.listGroupeModuleResponse = listGroupeModuleResponse;
 		this.count = count;
 	}
 }

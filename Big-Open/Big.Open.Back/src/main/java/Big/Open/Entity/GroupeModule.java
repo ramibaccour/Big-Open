@@ -10,18 +10,21 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 @Data
 @Entity
-@Table(name = "user")
-public class User 
+@Table(name = "groupe_module")
+public class GroupeModule 
 {
 	@NotNull()
 	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
-	@Column(name="username")
-	private String username;
-	@Column(name="password")
-	private String password;
-	@Column(name="is_deleted")
-	private Integer isDeleted;
-	private GroupeModule groupeModule;
+	@Column(name="nom_lng1")
+	private String nomLng1;
+	@Column(name="nom_lng2")
+	private String nomLng2;
+	@Column(name="nom_lng3")
+	private String nomLng3;
+	@Column(name="value")
+	private boolean value;
+	private Module module;
+	private List<User> listUser;
 }

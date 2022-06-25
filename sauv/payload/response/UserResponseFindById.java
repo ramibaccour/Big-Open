@@ -2,17 +2,17 @@ package big.open.payload.response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class UserResponseFindById
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserResponseFindById 
 {
-	private UserResponse userResponse;
+	private UserResponse UserResponse;
 	private String message;
-	public UserResponseFindById(UserResponse userResponse)
+	public UserResponseFindById(UserResponse UserResponse) 
 	{
 		super();
-		this.userResponse = userResponse;
+		this.UserResponse = UserResponse;
 	}
 	public UserResponseFindById(String message) 
 	{

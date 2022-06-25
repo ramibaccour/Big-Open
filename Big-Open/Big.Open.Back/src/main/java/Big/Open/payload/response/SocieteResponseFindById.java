@@ -5,16 +5,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UserResponseFindById
+public class SocieteResponseFindById
 {
-	private UserResponse userResponse;
+	private SocieteResponse societeResponse;
 	private String message;
-	public UserResponseFindById(UserResponse userResponse)
+	public SocieteResponseFindById(SocieteResponse societeResponse)
 	{
 		super();
-		this.userResponse = userResponse;
+		this.societeResponse = societeResponse;
 	}
-	public UserResponseFindById(String message) 
+	public SocieteResponseFindById(String message) 
 	{
 		super();
 		this.message = message;
