@@ -1,7 +1,9 @@
 package big.open.payload.request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import java.time.LocalDateTime;
 import java.util.List;
+import org.springframework.data.geo.Point;
 import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,6 +18,9 @@ public class SocieteRequest
 	private String capitalSociete;
 	private Integer idTva;
 	private Integer idMonnaie;
+	private Integer idImage;
+	private List<CoordonneeRequest> listCoordonneeRequest;
+	private List<ImageRequest> listImageRequest;
 	public SocieteRequest(Integer id)
 	{
 		super();

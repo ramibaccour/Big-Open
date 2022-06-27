@@ -64,10 +64,6 @@ public class ModuleService
 		try
 		{
 			var module = moduleRepository.findById(id);
-			if(module.get().getIsDeleted() == 0)
-				module.get().setIsDeleted(1);
-			else
-				module.get().setIsDeleted(0);
 			moduleRepository.save(module.get());
 			return "";
 		}

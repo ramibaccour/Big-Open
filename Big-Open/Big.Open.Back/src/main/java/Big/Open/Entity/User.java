@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.List;
+import org.springframework.data.geo.Point;
+import java.time.LocalDateTime;
 import lombok.Data;
 import javax.validation.constraints.NotNull;
 @Data
@@ -23,5 +26,5 @@ public class User
 	private String password;
 	@Column(name="is_deleted")
 	private Integer isDeleted;
-	private GroupeModule groupeModule;
+	@Transient	private GroupeModule groupeModule;
 }

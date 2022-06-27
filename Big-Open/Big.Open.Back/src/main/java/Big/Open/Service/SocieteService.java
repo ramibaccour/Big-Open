@@ -64,10 +64,6 @@ public class SocieteService
 		try
 		{
 			var societe = societeRepository.findById(id);
-			if(societe.get().getIsDeleted() == 0)
-				societe.get().setIsDeleted(1);
-			else
-				societe.get().setIsDeleted(0);
 			societeRepository.save(societe.get());
 			return "";
 		}

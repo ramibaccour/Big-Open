@@ -1,7 +1,9 @@
 package big.open.payload.request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import java.time.LocalDateTime;
 import java.util.List;
+import org.springframework.data.geo.Point;
 import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,8 +14,7 @@ public class GroupeModuleRequest
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private boolean value;
-	private ModuleRequest moduleRequest;
+	private List<DetailGroupeModuleRequest> listDetailGroupeModuleRequest;
 	private List<UserRequest> listUserRequest;
 	public GroupeModuleRequest(Integer id)
 	{

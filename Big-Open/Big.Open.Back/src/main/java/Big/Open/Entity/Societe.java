@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.List;
+import org.springframework.data.geo.Point;
+import java.time.LocalDateTime;
 import lombok.Data;
 import javax.validation.constraints.NotNull;
 @Data
@@ -31,4 +34,10 @@ public class Societe
 	private Integer idTva;
 	@Column(name="id_monnaie")
 	private Integer idMonnaie;
+	@Column(name="id_image")
+	private Integer idImage;
+	@Transient
+	private List<Coordonnee> listCoordonnee;
+	@Transient
+	private List<Image> listImage;
 }

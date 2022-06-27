@@ -1,4 +1,6 @@
 package big.open.security.services;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,8 +19,10 @@ public class UserDetailsServiceImpl implements UserDetailsService
 	@Transactional
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException 
 	{
-		User user = userRepository.findByUsername(username)
-				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
-		return UserDetailsImpl.build(user);
+		Optional<User> user = userRepository.findByUsername(username);
+		if(user.isPresent())
+			return UserDetailsImpl.build(user.get());
+		else
+			return UserDetailsImpl.build(new User());
 	}
 }

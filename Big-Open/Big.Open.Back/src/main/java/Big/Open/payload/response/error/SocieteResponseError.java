@@ -15,5 +15,6 @@ public class SocieteResponseError
 	private String capitalSociete;
 	private String idTva;
 	private String idMonnaie;
+	private String idImage;
 	private boolean have_error;
 }

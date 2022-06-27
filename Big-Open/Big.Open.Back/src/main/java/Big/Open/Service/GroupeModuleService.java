@@ -64,10 +64,6 @@ public class GroupeModuleService
 		try
 		{
 			var groupeModule = groupeModuleRepository.findById(id);
-			if(groupeModule.get().getIsDeleted() == 0)
-				groupeModule.get().setIsDeleted(1);
-			else
-				groupeModule.get().setIsDeleted(0);
 			groupeModuleRepository.save(groupeModule.get());
 			return "";
 		}
