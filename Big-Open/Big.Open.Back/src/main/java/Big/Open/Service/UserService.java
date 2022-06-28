@@ -12,10 +12,7 @@ import big.open.repository.UserRepository;
 import big.open.security.jwt.JwtUtils;
 import big.open.utility.ObjectMapperUtility;
 import big.open.utility.Utility;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 @Service
 public class UserService
@@ -36,7 +33,7 @@ public class UserService
 			UserResponse userResponse = ObjectMapperUtility.map(user.get(),UserResponse.class);
 			return new UserResponseFindById(userResponse);
 		}
-		return new UserResponseFindById("Non trouvé");
+		return new UserResponseFindById("Non trouvï¿½");
 	}
 	public UserResponseSave save(UserRequest userRequest)
 	{
