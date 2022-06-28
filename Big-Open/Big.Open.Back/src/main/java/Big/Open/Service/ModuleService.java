@@ -76,6 +76,10 @@ public class ModuleService
 	{
 		ModuleResponseError moduleResponseError = new ModuleResponseError();
 		moduleResponseError.setHave_error(false);
+		if(Utility.isEmpty(moduleRequest.getId().toString()) )
+		{
+			moduleRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(moduleRequest.get()) )
 		//{
 				//moduleResponseError.setHave_error(true);

@@ -76,6 +76,10 @@ public class DepotArticleService
 	{
 		DepotArticleResponseError depotArticleResponseError = new DepotArticleResponseError();
 		depotArticleResponseError.setHave_error(false);
+		if(Utility.isEmpty(depotArticleRequest.getId().toString()) )
+		{
+			depotArticleRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(depotArticleRequest.get()) )
 		//{
 				//depotArticleResponseError.setHave_error(true);

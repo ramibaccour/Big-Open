@@ -76,6 +76,10 @@ public class TvaService
 	{
 		TvaResponseError tvaResponseError = new TvaResponseError();
 		tvaResponseError.setHave_error(false);
+		if(Utility.isEmpty(tvaRequest.getId().toString()) )
+		{
+			tvaRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(tvaRequest.get()) )
 		//{
 				//tvaResponseError.setHave_error(true);

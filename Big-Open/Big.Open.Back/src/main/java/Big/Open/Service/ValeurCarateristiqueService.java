@@ -76,6 +76,10 @@ public class ValeurCarateristiqueService
 	{
 		ValeurCarateristiqueResponseError valeurCarateristiqueResponseError = new ValeurCarateristiqueResponseError();
 		valeurCarateristiqueResponseError.setHave_error(false);
+		if(Utility.isEmpty(valeurCarateristiqueRequest.getId().toString()) )
+		{
+			valeurCarateristiqueRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(valeurCarateristiqueRequest.get()) )
 		//{
 				//valeurCarateristiqueResponseError.setHave_error(true);

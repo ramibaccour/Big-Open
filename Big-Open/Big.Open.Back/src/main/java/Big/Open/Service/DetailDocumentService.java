@@ -76,6 +76,10 @@ public class DetailDocumentService
 	{
 		DetailDocumentResponseError detailDocumentResponseError = new DetailDocumentResponseError();
 		detailDocumentResponseError.setHave_error(false);
+		if(Utility.isEmpty(detailDocumentRequest.getId().toString()) )
+		{
+			detailDocumentRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(detailDocumentRequest.get()) )
 		//{
 				//detailDocumentResponseError.setHave_error(true);

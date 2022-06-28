@@ -76,6 +76,10 @@ public class ArticleCategorieService
 	{
 		ArticleCategorieResponseError articleCategorieResponseError = new ArticleCategorieResponseError();
 		articleCategorieResponseError.setHave_error(false);
+		if(Utility.isEmpty(articleCategorieRequest.getId().toString()) )
+		{
+			articleCategorieRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(articleCategorieRequest.get()) )
 		//{
 				//articleCategorieResponseError.setHave_error(true);

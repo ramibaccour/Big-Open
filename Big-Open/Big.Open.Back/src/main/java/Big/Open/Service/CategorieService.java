@@ -76,6 +76,10 @@ public class CategorieService
 	{
 		CategorieResponseError categorieResponseError = new CategorieResponseError();
 		categorieResponseError.setHave_error(false);
+		if(Utility.isEmpty(categorieRequest.getId().toString()) )
+		{
+			categorieRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(categorieRequest.get()) )
 		//{
 				//categorieResponseError.setHave_error(true);

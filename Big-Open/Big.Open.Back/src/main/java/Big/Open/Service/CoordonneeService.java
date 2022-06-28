@@ -76,6 +76,10 @@ public class CoordonneeService
 	{
 		CoordonneeResponseError coordonneeResponseError = new CoordonneeResponseError();
 		coordonneeResponseError.setHave_error(false);
+		if(Utility.isEmpty(coordonneeRequest.getId().toString()) )
+		{
+			coordonneeRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(coordonneeRequest.get()) )
 		//{
 				//coordonneeResponseError.setHave_error(true);

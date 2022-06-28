@@ -76,6 +76,10 @@ public class ArticlePrixService
 	{
 		ArticlePrixResponseError articlePrixResponseError = new ArticlePrixResponseError();
 		articlePrixResponseError.setHave_error(false);
+		if(Utility.isEmpty(articlePrixRequest.getId().toString()) )
+		{
+			articlePrixRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(articlePrixRequest.get()) )
 		//{
 				//articlePrixResponseError.setHave_error(true);

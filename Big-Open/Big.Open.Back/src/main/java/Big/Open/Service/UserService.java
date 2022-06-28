@@ -80,6 +80,10 @@ public class UserService
 	{
 		UserResponseError userResponseError = new UserResponseError();
 		userResponseError.setHave_error(false);
+		if(Utility.isEmpty(userRequest.getId().toString()) )
+		{
+			userRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(userRequest.get()) )
 		//{
 				//userResponseError.setHave_error(true);

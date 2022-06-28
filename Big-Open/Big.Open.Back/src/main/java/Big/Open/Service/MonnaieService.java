@@ -76,6 +76,10 @@ public class MonnaieService
 	{
 		MonnaieResponseError monnaieResponseError = new MonnaieResponseError();
 		monnaieResponseError.setHave_error(false);
+		if(Utility.isEmpty(monnaieRequest.getId().toString()) )
+		{
+			monnaieRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(monnaieRequest.get()) )
 		//{
 				//monnaieResponseError.setHave_error(true);

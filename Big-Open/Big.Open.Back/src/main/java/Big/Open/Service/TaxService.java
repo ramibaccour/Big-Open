@@ -76,6 +76,10 @@ public class TaxService
 	{
 		TaxResponseError taxResponseError = new TaxResponseError();
 		taxResponseError.setHave_error(false);
+		if(Utility.isEmpty(taxRequest.getId().toString()) )
+		{
+			taxRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(taxRequest.get()) )
 		//{
 				//taxResponseError.setHave_error(true);

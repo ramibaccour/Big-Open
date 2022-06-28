@@ -76,6 +76,10 @@ public class RetenuSourceService
 	{
 		RetenuSourceResponseError retenuSourceResponseError = new RetenuSourceResponseError();
 		retenuSourceResponseError.setHave_error(false);
+		if(Utility.isEmpty(retenuSourceRequest.getId().toString()) )
+		{
+			retenuSourceRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(retenuSourceRequest.get()) )
 		//{
 				//retenuSourceResponseError.setHave_error(true);

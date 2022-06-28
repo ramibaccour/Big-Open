@@ -1,0 +1,33 @@
+<div id="topbar">
+    <div class="display-flex-between">
+        <div class="display-flex">
+            <img id="logo" src="assets/images/logo.png">
+                
+                <button mat-icon-button  id="menu-icon"  (click)="showMenu = true" class="menu">
+                    <mat-icon>menu</mat-icon>
+                </button>
+
+            
+        </div>
+        
+        <div >
+            <span (click)="profile()"  *ngIf="generalService.user && generalService.user.userResponse" class="name-user">
+                Hi {{generalService.user.userResponse.fullName}}
+            </span>
+            <button (mouseenter)="op.toggle($event)" mat-mini-fab class="user">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        </div>
+    </div>
+   
+
+</div>
+
+<p-overlayPanel #op  [style]="{width: '250px'}">
+    <a (click)="profile()" >Profile</a>
+    <hr>
+    <a (click)="deconnection()">Déconnection</a>
+</p-overlayPanel>
+<p-sidebar [(visible)]="showMenu" [style]="{width:'85%'}" [showCloseIcon]="false" [baseZIndex]="10000">
+    <app-menu></app-menu>
+</p-sidebar>

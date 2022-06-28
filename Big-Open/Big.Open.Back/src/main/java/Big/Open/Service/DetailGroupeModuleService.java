@@ -76,6 +76,10 @@ public class DetailGroupeModuleService
 	{
 		DetailGroupeModuleResponseError detailGroupeModuleResponseError = new DetailGroupeModuleResponseError();
 		detailGroupeModuleResponseError.setHave_error(false);
+		if(Utility.isEmpty(detailGroupeModuleRequest.getId().toString()) )
+		{
+			detailGroupeModuleRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(detailGroupeModuleRequest.get()) )
 		//{
 				//detailGroupeModuleResponseError.setHave_error(true);

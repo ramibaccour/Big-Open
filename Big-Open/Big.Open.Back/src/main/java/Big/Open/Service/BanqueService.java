@@ -76,6 +76,10 @@ public class BanqueService
 	{
 		BanqueResponseError banqueResponseError = new BanqueResponseError();
 		banqueResponseError.setHave_error(false);
+		if(Utility.isEmpty(banqueRequest.getId().toString()) )
+		{
+			banqueRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(banqueRequest.get()) )
 		//{
 				//banqueResponseError.setHave_error(true);

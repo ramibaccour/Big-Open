@@ -76,6 +76,10 @@ public class UniteService
 	{
 		UniteResponseError uniteResponseError = new UniteResponseError();
 		uniteResponseError.setHave_error(false);
+		if(Utility.isEmpty(uniteRequest.getId().toString()) )
+		{
+			uniteRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(uniteRequest.get()) )
 		//{
 				//uniteResponseError.setHave_error(true);

@@ -76,6 +76,10 @@ public class CaisseService
 	{
 		CaisseResponseError caisseResponseError = new CaisseResponseError();
 		caisseResponseError.setHave_error(false);
+		if(Utility.isEmpty(caisseRequest.getId().toString()) )
+		{
+			caisseRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(caisseRequest.get()) )
 		//{
 				//caisseResponseError.setHave_error(true);

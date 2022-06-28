@@ -76,6 +76,10 @@ public class CollaborateurService
 	{
 		CollaborateurResponseError collaborateurResponseError = new CollaborateurResponseError();
 		collaborateurResponseError.setHave_error(false);
+		if(Utility.isEmpty(collaborateurRequest.getId().toString()) )
+		{
+			collaborateurRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(collaborateurRequest.get()) )
 		//{
 				//collaborateurResponseError.setHave_error(true);

@@ -76,6 +76,10 @@ public class SocieteService
 	{
 		SocieteResponseError societeResponseError = new SocieteResponseError();
 		societeResponseError.setHave_error(false);
+		if(Utility.isEmpty(societeRequest.getId().toString()) )
+		{
+			societeRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(societeRequest.get()) )
 		//{
 				//societeResponseError.setHave_error(true);

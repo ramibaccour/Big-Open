@@ -76,6 +76,10 @@ public class GroupeModuleService
 	{
 		GroupeModuleResponseError groupeModuleResponseError = new GroupeModuleResponseError();
 		groupeModuleResponseError.setHave_error(false);
+		if(Utility.isEmpty(groupeModuleRequest.getId().toString()) )
+		{
+			groupeModuleRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(groupeModuleRequest.get()) )
 		//{
 				//groupeModuleResponseError.setHave_error(true);

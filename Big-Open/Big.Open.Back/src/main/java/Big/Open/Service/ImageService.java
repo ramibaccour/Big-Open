@@ -76,6 +76,10 @@ public class ImageService
 	{
 		ImageResponseError imageResponseError = new ImageResponseError();
 		imageResponseError.setHave_error(false);
+		if(Utility.isEmpty(imageRequest.getId().toString()) )
+		{
+			imageRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(imageRequest.get()) )
 		//{
 				//imageResponseError.setHave_error(true);

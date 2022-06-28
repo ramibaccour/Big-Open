@@ -76,6 +76,10 @@ public class DetailDocumentTaxService
 	{
 		DetailDocumentTaxResponseError detailDocumentTaxResponseError = new DetailDocumentTaxResponseError();
 		detailDocumentTaxResponseError.setHave_error(false);
+		if(Utility.isEmpty(detailDocumentTaxRequest.getId().toString()) )
+		{
+			detailDocumentTaxRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(detailDocumentTaxRequest.get()) )
 		//{
 				//detailDocumentTaxResponseError.setHave_error(true);

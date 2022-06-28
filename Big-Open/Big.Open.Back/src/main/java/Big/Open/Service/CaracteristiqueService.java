@@ -76,6 +76,10 @@ public class CaracteristiqueService
 	{
 		CaracteristiqueResponseError caracteristiqueResponseError = new CaracteristiqueResponseError();
 		caracteristiqueResponseError.setHave_error(false);
+		if(Utility.isEmpty(caracteristiqueRequest.getId().toString()) )
+		{
+			caracteristiqueRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(caracteristiqueRequest.get()) )
 		//{
 				//caracteristiqueResponseError.setHave_error(true);

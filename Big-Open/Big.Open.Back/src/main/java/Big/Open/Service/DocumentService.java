@@ -76,6 +76,10 @@ public class DocumentService
 	{
 		DocumentResponseError documentResponseError = new DocumentResponseError();
 		documentResponseError.setHave_error(false);
+		if(Utility.isEmpty(documentRequest.getId().toString()) )
+		{
+			documentRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(documentRequest.get()) )
 		//{
 				//documentResponseError.setHave_error(true);

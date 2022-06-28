@@ -76,6 +76,10 @@ public class ArticleTaxService
 	{
 		ArticleTaxResponseError articleTaxResponseError = new ArticleTaxResponseError();
 		articleTaxResponseError.setHave_error(false);
+		if(Utility.isEmpty(articleTaxRequest.getId().toString()) )
+		{
+			articleTaxRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(articleTaxRequest.get()) )
 		//{
 				//articleTaxResponseError.setHave_error(true);

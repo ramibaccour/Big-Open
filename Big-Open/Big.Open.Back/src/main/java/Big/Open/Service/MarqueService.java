@@ -76,6 +76,10 @@ public class MarqueService
 	{
 		MarqueResponseError marqueResponseError = new MarqueResponseError();
 		marqueResponseError.setHave_error(false);
+		if(Utility.isEmpty(marqueRequest.getId().toString()) )
+		{
+			marqueRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(marqueRequest.get()) )
 		//{
 				//marqueResponseError.setHave_error(true);

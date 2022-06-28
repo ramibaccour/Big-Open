@@ -76,6 +76,10 @@ public class ReglementService
 	{
 		ReglementResponseError reglementResponseError = new ReglementResponseError();
 		reglementResponseError.setHave_error(false);
+		if(Utility.isEmpty(reglementRequest.getId().toString()) )
+		{
+			reglementRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(reglementRequest.get()) )
 		//{
 				//reglementResponseError.setHave_error(true);

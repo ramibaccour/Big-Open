@@ -80,6 +80,10 @@ public class ArticleService
 	{
 		ArticleResponseError articleResponseError = new ArticleResponseError();
 		articleResponseError.setHave_error(false);
+		if(Utility.isEmpty(articleRequest.getId().toString()) )
+		{
+			articleRequest.setId(-1);
+		}
 		//if(Utility.isEmpty(articleRequest.get()) )
 		//{
 				//articleResponseError.setHave_error(true);

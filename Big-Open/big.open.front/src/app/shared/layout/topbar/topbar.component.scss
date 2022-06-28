@@ -1,0 +1,57 @@
+#logo
+{
+    width: 60px;
+}
+
+#menu-icon
+{
+    margin-left: 10px;
+}
+.menu
+{
+    color: rgb(34, 34, 34);
+}
+.display-flex
+{
+    display : flex;
+    align-items: center;
+}
+.display-flex-between
+{
+    display : flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 10px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    align-items: center;
+}
+a
+{
+    cursor: pointer;
+}
+.user
+{
+    background-color: #F07B23;
+}
+.name-user
+{
+    cursor: pointer;
+    margin-right: 10px;
+    color: #222b45;
+    font-family: Open Sans,sans-serif;
+}
+@media screen and (min-width: 680px)
+{
+    #menu-icon
+    {
+        display: none;
+    }
+}
+@media screen and (max-width: 320px)
+{
+    #logo
+    {
+        display: none;
+    }
+}
