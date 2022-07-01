@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,11 +35,11 @@ import {MomentDateModule} from '@angular/material-moment-adapter';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
 //------------------------End material----------------------
-import { MainComponent } from './components/layout/main/main.component';
-import { TopbarComponent } from './components/layout/topbar/topbar.component';
-import { MenuComponent } from './components/layout/menu/menu.component';
-import { TableComponent } from './components/utility/table/table.component';
-import { DialogComponent } from './components/utility/dialog/dialog.component';
+import { MainComponent } from './shared/layout/main/main.component';
+import { TopbarComponent } from './shared/layout/topbar/topbar.component';
+import { MenuComponent } from './shared/layout/menu/menu.component';
+import { TableComponent } from './shared/utility/table/table.component';
+import { DialogComponent } from './shared/utility/dialog/dialog.component';
 import { LoginComponent } from './shared/login/login.component';
 
 // const MY_FORMATS = 
@@ -68,6 +69,7 @@ import { LoginComponent } from './shared/login/login.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,

@@ -1,0 +1,26 @@
+.centent
+{
+    padding: 10px;
+}
+.center
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.text-center
+{
+    text-align: center;
+}
+.input-login
+{
+    width: 450px;
+}
+@media screen and (max-width: 500px)
+{
+    .input-login
+    {
+        width: 100%;
+    }
+}

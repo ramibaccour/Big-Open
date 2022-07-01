@@ -6,7 +6,7 @@ import { of } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
-declare var ol;
+// declare var ol;
 @Injectable({
   providedIn: 'root'
 })
@@ -23,153 +23,153 @@ export class GeneralService
   listeSelectable;
   dialogRef;
 // -----------------begin pour api osrm pam -----------------
-  points = []
-  url_osrm_nearest = 'https://router.project-osrm.org/nearest/v1/driving/'
-  url_osrm_route =   'https://router.project-osrm.org/route/v1/driving/'
-  url_osrm_trip =    'https://router.project-osrm.org/trip/v1/bike/'
-  icon_livreur = 'assets/images/livreur.png'
-  icon_user = 'assets/images/user.png'
-  icon_restau = 'assets/images/restau.png'
-  vectorSource = new ol.source.Vector()
-  vectorLayer = new ol.layer.Vector
-  ({
-    source: this.vectorSource
-  })
+  // points = []
+  // url_osrm_nearest = 'https://router.project-osrm.org/nearest/v1/driving/'
+  // url_osrm_route =   'https://router.project-osrm.org/route/v1/driving/'
+  // url_osrm_trip =    'https://router.project-osrm.org/trip/v1/bike/'
+  // icon_livreur = 'assets/images/livreur.png'
+  // icon_user = 'assets/images/user.png'
+  // icon_restau = 'assets/images/restau.png'
+  // vectorSource = new ol.source.Vector()
+  // vectorLayer = new ol.layer.Vector
+  // ({
+  //   source: this.vectorSource
+  // })
 
-  styles = 
-  {
-    route: new ol.style.Style
-    ({
-      stroke: new ol.style.Stroke
-      ({
-        width: 4, 
-        color: [40, 40, 40, 0.8]
-      })
-    }),
-    routeCmd: new ol.style.Style
-    ({
-      stroke: new ol.style.Stroke
-      ({
-        width: 4, 
-        color: ""
-      })
-    }),
-    iconLivreur: new ol.style.Style
-    ({
-      image: new ol.style.Icon
-      ({
-        anchor: [0.5, 1],
-        src: this.icon_livreur
-      })
-    }),
-    iconUser: new ol.style.Style
-    ({
-      image: new ol.style.Icon
-      ({
-        anchor: [0.5, 1],
-        src: this.icon_user
-      })
-    }),
-    iconRestau: new ol.style.Style
-    ({
-      image: new ol.style.Icon
-      ({
-        anchor: [0.5, 1],
-        src: this.icon_restau
-      })
-    })
-  };
+  // styles = 
+  // {
+  //   route: new ol.style.Style
+  //   ({
+  //     stroke: new ol.style.Stroke
+  //     ({
+  //       width: 4, 
+  //       color: [40, 40, 40, 0.8]
+  //     })
+  //   }),
+  //   routeCmd: new ol.style.Style
+  //   ({
+  //     stroke: new ol.style.Stroke
+  //     ({
+  //       width: 4, 
+  //       color: ""
+  //     })
+  //   }),
+  //   iconLivreur: new ol.style.Style
+  //   ({
+  //     image: new ol.style.Icon
+  //     ({
+  //       anchor: [0.5, 1],
+  //       src: this.icon_livreur
+  //     })
+  //   }),
+  //   iconUser: new ol.style.Style
+  //   ({
+  //     image: new ol.style.Icon
+  //     ({
+  //       anchor: [0.5, 1],
+  //       src: this.icon_user
+  //     })
+  //   }),
+  //   iconRestau: new ol.style.Style
+  //   ({
+  //     image: new ol.style.Icon
+  //     ({
+  //       anchor: [0.5, 1],
+  //       src: this.icon_restau
+  //     })
+  //   })
+  // };
 
-  utils = 
-  {    
-    getStyleRoute :(color,width= 4, lineDash? )=>
-    {
-      return new ol.style.Style
-      ({
-        stroke: new ol.style.Stroke
-        ({
-          width: width, 
-          color: color,
-          lineDash: lineDash? lineDash : []
-        })
-      })
-    },
-    getNearest: (coord)=>
-    {
-      var coord4326 = this.utils.to4326(coord);    
-      return new Promise((resolve, reject)=>
-      {
-        //make sure the coord is on street
-        fetch(this.url_osrm_nearest + coord4326.join()).then((response) =>
-        { 
-          // Convert to JSON
-          return response.json();
-        }).then((json) =>
-        {
-          if (json.code === 'Ok') 
-            resolve(json.waypoints[0].location);
-          else 
-            reject();
-        });
-      });
-    },
-    createFeature: (coord, styles) =>
-    {
-      var feature = new ol.Feature
-      ({
-        type: 'place',
-        geometry: new ol.geom.Point(ol.proj.fromLonLat(coord))
-      });
-      feature.setStyle(styles);
-      this.vectorSource.addFeature(feature);
-      return feature;
-    },
-    createRoute: (polyline, style) =>
-    {
-      // route is ol.geom.LineString
-      var route = new ol.format.Polyline
-      ({
-        factor: 1e5
-      }).readGeometry(polyline, 
-      {
-        dataProjection: 'EPSG:4326',
-        featureProjection: 'EPSG:3857'
-      });
+  // utils = 
+  // {    
+  //   getStyleRoute :(color,width= 4, lineDash? )=>
+  //   {
+  //     return new ol.style.Style
+  //     ({
+  //       stroke: new ol.style.Stroke
+  //       ({
+  //         width: width, 
+  //         color: color,
+  //         lineDash: lineDash? lineDash : []
+  //       })
+  //     })
+  //   },
+  //   getNearest: (coord)=>
+  //   {
+  //     var coord4326 = this.utils.to4326(coord);    
+  //     return new Promise((resolve, reject)=>
+  //     {
+  //       //make sure the coord is on street
+  //       fetch(this.url_osrm_nearest + coord4326.join()).then((response) =>
+  //       { 
+  //         // Convert to JSON
+  //         return response.json();
+  //       }).then((json) =>
+  //       {
+  //         if (json.code === 'Ok') 
+  //           resolve(json.waypoints[0].location);
+  //         else 
+  //           reject();
+  //       });
+  //     });
+  //   },
+  //   createFeature: (coord, styles) =>
+  //   {
+  //     var feature = new ol.Feature
+  //     ({
+  //       type: 'place',
+  //       geometry: new ol.geom.Point(ol.proj.fromLonLat(coord))
+  //     });
+  //     feature.setStyle(styles);
+  //     this.vectorSource.addFeature(feature);
+  //     return feature;
+  //   },
+  //   createRoute: (polyline, style) =>
+  //   {
+  //     // route is ol.geom.LineString
+  //     var route = new ol.format.Polyline
+  //     ({
+  //       factor: 1e5
+  //     }).readGeometry(polyline, 
+  //     {
+  //       dataProjection: 'EPSG:4326',
+  //       featureProjection: 'EPSG:3857'
+  //     });
      
-      var feature = new ol.Feature
-      ({
-        type: 'route',
-        geometry: route
-      });
-      feature.setStyle(style);
-      this.vectorSource.addFeature(feature);
-      this.showSpinner = false;
-      return feature
-    },
-    to4326: (coord)=>
-    {
+  //     var feature = new ol.Feature
+  //     ({
+  //       type: 'route',
+  //       geometry: route
+  //     });
+  //     feature.setStyle(style);
+  //     this.vectorSource.addFeature(feature);
+  //     this.showSpinner = false;
+  //     return feature
+  //   },
+  //   to4326: (coord)=>
+  //   {
       
-      return ol.proj.transform
-      ([
-        parseFloat(coord[0]), parseFloat(coord[1])
-      ], 'EPSG:3857', 'EPSG:4326');
-    },
-    to3857: (coord)=>
-    {
-      return ol.proj.transform([parseFloat(coord[0]), parseFloat(coord[1])], 'EPSG:4326', 'EPSG:3857');
+  //     return ol.proj.transform
+  //     ([
+  //       parseFloat(coord[0]), parseFloat(coord[1])
+  //     ], 'EPSG:3857', 'EPSG:4326');
+  //   },
+  //   to3857: (coord)=>
+  //   {
+  //     return ol.proj.transform([parseFloat(coord[0]), parseFloat(coord[1])], 'EPSG:4326', 'EPSG:3857');
       
-    },
-    to28992: (coord)=>
-    {
-      return ol.proj.transform([parseFloat(coord[0]), parseFloat(coord[1])], 'EPSG:3857', 'EPSG:28992')
+  //   },
+  //   to28992: (coord)=>
+  //   {
+  //     return ol.proj.transform([parseFloat(coord[0]), parseFloat(coord[1])], 'EPSG:3857', 'EPSG:28992')
       
-    },
-    to2284: (coord)=>
-    {
-      return ol.proj.transform([-79.4460,37.7890], 'EPSG:4326', 'EPSG:2284');
+  //   },
+  //   to2284: (coord)=>
+  //   {
+  //     return ol.proj.transform([-79.4460,37.7890], 'EPSG:4326', 'EPSG:2284');
       
-    }
-  };
+  //   }
+  // };
 // -----------------end pour api osrm pam -----------------
   httpPost(object,url, fn,error)
   {
@@ -189,14 +189,6 @@ export class GeneralService
   {
     this.checkToken();
     return this.http.get<any>(this.url+this.api + url, {headers : this.headers})
-    .pipe(catchError(error? error: ()=>{ return of([]); }))    
-    .subscribe(fn);
-  }
-  httpGetMap(p1,p2, fn,error)
-  {
-    this.checkToken();
-    var url = this.urlFindMap + p1.lang+ "," + p1.lat +";" + p2.lang+ "," + p2.lat + "?overview=false&alternatives=true&steps=true"
-    return this.http.get<any>(url)
     .pipe(catchError(error? error: ()=>{ return of([]); }))    
     .subscribe(fn);
   }

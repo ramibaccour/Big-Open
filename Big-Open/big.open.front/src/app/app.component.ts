@@ -10,7 +10,7 @@ export class AppComponent implements OnInit
 {
   constructor(public generalService : GeneralService) { }
 
-  title = 'Delivery-Front';
+  title = 'Big-Open-Front';
   ngOnInit(): void 
   {
     var userString  = localStorage.getItem("user");
