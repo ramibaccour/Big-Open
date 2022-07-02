@@ -20,17 +20,25 @@ export class LoginComponent implements OnInit
   }
   getListLng()
   {
-    this.generalService.showSpinner = true;
-    var fn = (listLng)=>
+    setTimeout(()=>
     {
-      this.generalService.showSpinner = false;
-      this.listLng = listLng;
-    }
-    this.generalService.httpGet(this.generalService.urlFindAllLng,fn, this.generalService.erreur )
+      this.generalService.showSpinner = true;
+      var fn = (listLng)=>
+      {
+        this.generalService.showSpinner = false;
+        this.listLng = listLng.listLngResponse;
+      }
+      this.generalService.httpGet(this.generalService.urlFindAllLng,fn, this.generalService.erreur )
+    },50)
+    
   }
   init()
   {
     this.user = {}
     this.userResponse = {}
+  }
+  setLng(lng)
+  {
+
   }
 }

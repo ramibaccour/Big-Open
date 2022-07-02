@@ -12,6 +12,7 @@ public class LngResponse
 {
 	private Integer id;
 	private String name;
+	private boolean rtl;
 	private List<UserResponse> listUser;
 	public LngResponse(Integer id)
 	{

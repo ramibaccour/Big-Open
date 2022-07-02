@@ -13,9 +13,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class GeneralService 
 {
   constructor(private sanitized: DomSanitizer, public router: Router, private http: HttpClient,public route: ActivatedRoute, private _snackBar: MatSnackBar,public dialog: MatDialog) { }
-  url;
-  api;
-  urlFindAllLng = "api/lng/findAll"
+  url = "http://localhost:8080/";
+  api = "api/";
+  urlFindAllLng = "lng/findAll"
   headers;
   user
   showSpinner;
