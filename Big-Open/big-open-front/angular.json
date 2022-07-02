@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "0f15a4fa-6204-4911-9101-04ed44e02320"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Big-Open-Front": {
+    "big-open-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -35,11 +32,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss",
-              "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
-
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -48,9 +41,14 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-               }
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
               ],
               "fileReplacements": [
                 {
@@ -75,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Big-Open-Front:build:production"
+              "browserTarget": "big-open-front:build:production"
             },
             "development": {
-              "browserTarget": "Big-Open-Front:build:development"
+              "browserTarget": "big-open-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Big-Open-Front:build"
+            "browserTarget": "big-open-front:build"
           }
         },
         "test": {
@@ -111,5 +109,5 @@
       }
     }
   },
-  "defaultProject": "Big-Open-Front"
+  "defaultProject": "big-open-front"
 }

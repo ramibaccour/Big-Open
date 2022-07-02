@@ -8,14 +8,6 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';   
-//------------------------Begin Primeng----------------------
-import {OverlayPanelModule} from 'primeng/overlaypanel';
-import {SliderModule} from 'primeng/slider';
-import { PasswordModule } from "primeng/password";
-import {SidebarModule} from 'primeng/sidebar';
-import {PanelModule} from 'primeng/panel';
-import {GMapModule} from 'primeng/gmap';
-//------------------------End Primeng----------------------
 //------------------------begin material----------------------
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -42,20 +34,6 @@ import { TableComponent } from './shared/utility/table/table.component';
 import { DialogComponent } from './shared/utility/dialog/dialog.component';
 import { LoginComponent } from './shared/login/login.component';
 
-// const MY_FORMATS = 
-// {
-//   parse: 
-//   {
-//     dateInput: 'dd/MM/YYYY',
-//   },
-//   display: 
-//   {
-//     dateInput: 'DD/MM/YYYY',
-//     monthYearLabel: 'MMMM YYYY',
-//     dateA11yLabel: 'LL',
-//     monthYearA11yLabel: 'MMMM YYYY',
-//   },
-// };
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +45,9 @@ import { LoginComponent } from './shared/login/login.component';
     LoginComponent,
    
   ],
-  imports: [
+  imports: 
+  [
+    
     BrowserModule,
     RouterModule,
     AppRoutingModule,
@@ -75,15 +55,6 @@ import { LoginComponent } from './shared/login/login.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    //------------------------Begin Primeng----------------------
-    OverlayPanelModule,
-    SliderModule,
-    PasswordModule,
-    SidebarModule,
-    PanelModule,
-    GMapModule,
-    //------------------------End Primeng----------------------
-    
   //------------------------begin material----------------------
   MatButtonModule,
   MatIconModule,
@@ -103,6 +74,7 @@ import { LoginComponent } from './shared/login/login.component';
   MatPaginatorModule,
   MatExpansionModule
   //------------------------End material----------------------
+  
   ],
   providers: 
   [

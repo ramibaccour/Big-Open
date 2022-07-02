@@ -14,7 +14,7 @@
             <span (click)="profile()"  *ngIf="generalService.user && generalService.user.userResponse" class="name-user">
                 Hi {{generalService.user.userResponse.fullName}}
             </span>
-            <button (mouseenter)="op.toggle($event)" mat-mini-fab class="user">
+            <button mat-mini-fab class="user">
                 <mat-icon>account_circle</mat-icon>
             </button>
         </div>
@@ -23,11 +23,11 @@
 
 </div>
 
-<p-overlayPanel #op  [style]="{width: '250px'}">
+<div  [style]="{width: '250px'}">
     <a (click)="profile()" >Profile</a>
     <hr>
     <a (click)="deconnection()">Déconnection</a>
-</p-overlayPanel>
-<p-sidebar [(visible)]="showMenu" [style]="{width:'85%'}" [showCloseIcon]="false" [baseZIndex]="10000">
+</div>
+<div  >
     <app-menu></app-menu>
-</p-sidebar>
+</div>

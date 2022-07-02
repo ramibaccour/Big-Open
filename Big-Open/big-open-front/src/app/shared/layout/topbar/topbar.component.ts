@@ -1,5 +1,4 @@
 import {  Component, OnInit, ViewChild } from '@angular/core';
-import { ContextMenuService, MenuItem } from 'primeng/api';
 import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
@@ -11,7 +10,6 @@ export class TopbarComponent implements OnInit
 {
 
   constructor(public generalService : GeneralService) { }
-  items: MenuItem[];
   showMenu : boolean = false;
   ngOnInit() 
   {
