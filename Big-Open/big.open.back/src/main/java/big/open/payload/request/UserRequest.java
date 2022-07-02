@@ -1,9 +1,8 @@
 package big.open.payload.request;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import java.time.LocalDateTime;
-import java.util.List;
-import org.springframework.data.geo.Point;
+
+import big.open.payload.response.LngResponse;
 import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,7 +13,8 @@ public class UserRequest
 	private String username;
 	private String password;
 	private Integer isDeleted;
-	private GroupeModuleRequest groupeModuleRequest;
+	private LngResponse lng;
+	private GroupeModuleRequest groupeModule;
 	public UserRequest(Integer id)
 	{
 		super();

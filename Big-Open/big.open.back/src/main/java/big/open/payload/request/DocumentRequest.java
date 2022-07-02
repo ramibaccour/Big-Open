@@ -19,10 +19,9 @@ public class DocumentRequest
 	private double totalHt;
 	private double totalTva;
 	private double totalTtc;
-	private CollaborateurRequest collaborateurRequest;
-	private List<DetailDocumentRequest> listDetailDocumentRequest;
-	private List<ReglementRequest> listReglementRequest;
-	private List<ReglementRequest> listReglementAvoirRequest;
+	private CollaborateurRequest collaborateur;
+	private List<DetailDocumentRequest> listDetailDocument;
+	private List<ReglementRequest> listReglement;
 	public DocumentRequest(Integer id)
 	{
 		super();

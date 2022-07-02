@@ -18,7 +18,7 @@ public class DetailDocumentTaxRequest
 	private String signe;
 	private double valeur;
 	private boolean calculerAvantTva;
-	private TaxRequest taxRequest;
+	private TaxRequest tax;
 	public DetailDocumentTaxRequest(Integer id)
 	{
 		super();

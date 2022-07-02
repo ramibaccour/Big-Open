@@ -14,5 +14,5 @@ public class CollaborateurResponseError
 	private String uniteDelaiPaiement;
 	private String typeArticlePrix;
 	private String typeCollaborateur;
-	private boolean have_error;
+	private boolean haveError;
 }

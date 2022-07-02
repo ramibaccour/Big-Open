@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Image 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="nom")
@@ -30,10 +31,14 @@ public class Image
 	private String type;
 	@Column(name="type_objet")
 	private String typeObjet;
-	@Transient	private Article article;
-	@Transient	private Categorie categorie;
-	@Transient	private Collaborateur collaborateur;
-	@Transient	private Societe societe;
+	@Transient
+	private Article article;
+	@Transient
+	private Categorie categorie;
+	@Transient
+	private Collaborateur collaborateur;
+	@Transient
+	private Societe societe;
 	@Transient
 	private List<Monnaie> listMonnaie;
 }

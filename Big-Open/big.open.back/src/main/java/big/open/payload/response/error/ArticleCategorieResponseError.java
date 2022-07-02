@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 public class ArticleCategorieResponseError
 {
 	private String id;
-	private boolean have_error;
+	private boolean haveError;
 }

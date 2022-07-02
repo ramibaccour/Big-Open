@@ -14,7 +14,7 @@ public class UniteResponse
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private List<ArticleResponse> listArticleResponse;
+	private List<ArticleResponse> listArticle;
 	public UniteResponse(Integer id)
 	{
 		super();

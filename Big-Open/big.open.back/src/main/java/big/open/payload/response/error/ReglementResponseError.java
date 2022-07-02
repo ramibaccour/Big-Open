@@ -17,5 +17,5 @@ public class ReglementResponseError
 	private String ribCompteSource;
 	private String numeroTraite;
 	private String typeReglement;
-	private boolean have_error;
+	private boolean haveError;
 }

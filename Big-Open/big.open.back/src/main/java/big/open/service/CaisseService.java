@@ -36,12 +36,12 @@ public class CaisseService
 			CaisseResponse caisseResponse = ObjectMapperUtility.map(caisse.get(),CaisseResponse.class);
 			return new CaisseResponseFindById(caisseResponse);
 		}
-		return new CaisseResponseFindById("Non trouvé");
+		return new CaisseResponseFindById("");
 	}
 	public CaisseResponseSave save(CaisseRequest caisseRequest)
 	{
 		CaisseResponseError caisseResponseError = checkCaisseResponseError(caisseRequest);
-		if(caisseResponseError.isHave_error())
+		if(caisseResponseError.isHaveError())
 		{
 			return new CaisseResponseSave(caisseResponseError);
 		}
@@ -54,7 +54,7 @@ public class CaisseService
 			}
 			catch(Exception e)
 			{
-				caisseResponseError.setHave_error(true);
+				caisseResponseError.setHaveError(true);
 				return  new CaisseResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class CaisseService
 	private CaisseResponseError checkCaisseResponseError (CaisseRequest caisseRequest)
 	{
 		CaisseResponseError caisseResponseError = new CaisseResponseError();
-		caisseResponseError.setHave_error(false);
-		if(Utility.isEmpty(caisseRequest.getId().toString()) )
+		caisseResponseError.setHaveError(false);
+		if(Utility.isEmpty(caisseRequest.getId()) )
 		{
 			caisseRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(caisseRequest.get()) )
 		//{
-				//caisseResponseError.setHave_error(true);
+				//caisseResponseError.setHaveError(true);
 				//caisseResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return caisseResponseError;

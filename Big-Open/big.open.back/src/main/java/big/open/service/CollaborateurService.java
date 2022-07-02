@@ -36,12 +36,12 @@ public class CollaborateurService
 			CollaborateurResponse collaborateurResponse = ObjectMapperUtility.map(collaborateur.get(),CollaborateurResponse.class);
 			return new CollaborateurResponseFindById(collaborateurResponse);
 		}
-		return new CollaborateurResponseFindById("Non trouvé");
+		return new CollaborateurResponseFindById("");
 	}
 	public CollaborateurResponseSave save(CollaborateurRequest collaborateurRequest)
 	{
 		CollaborateurResponseError collaborateurResponseError = checkCollaborateurResponseError(collaborateurRequest);
-		if(collaborateurResponseError.isHave_error())
+		if(collaborateurResponseError.isHaveError())
 		{
 			return new CollaborateurResponseSave(collaborateurResponseError);
 		}
@@ -54,7 +54,7 @@ public class CollaborateurService
 			}
 			catch(Exception e)
 			{
-				collaborateurResponseError.setHave_error(true);
+				collaborateurResponseError.setHaveError(true);
 				return  new CollaborateurResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class CollaborateurService
 	private CollaborateurResponseError checkCollaborateurResponseError (CollaborateurRequest collaborateurRequest)
 	{
 		CollaborateurResponseError collaborateurResponseError = new CollaborateurResponseError();
-		collaborateurResponseError.setHave_error(false);
-		if(Utility.isEmpty(collaborateurRequest.getId().toString()) )
+		collaborateurResponseError.setHaveError(false);
+		if(Utility.isEmpty(collaborateurRequest.getId()) )
 		{
 			collaborateurRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(collaborateurRequest.get()) )
 		//{
-				//collaborateurResponseError.setHave_error(true);
+				//collaborateurResponseError.setHaveError(true);
 				//collaborateurResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return collaborateurResponseError;

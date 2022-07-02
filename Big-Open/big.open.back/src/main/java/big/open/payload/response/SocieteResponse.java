@@ -19,8 +19,8 @@ public class SocieteResponse
 	private Integer idTva;
 	private Integer idMonnaie;
 	private Integer idImage;
-	private List<CoordonneeResponse> listCoordonneeResponse;
-	private List<ImageResponse> listImageResponse;
+	private List<CoordonneeResponse> listCoordonnee;
+	private List<ImageResponse> listImage;
 	public SocieteResponse(Integer id)
 	{
 		super();

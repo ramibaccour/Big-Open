@@ -18,8 +18,8 @@ public class DetailDocumentRequest
 	private double articlePrix;
 	private Integer tauxTva;
 	private double totalHt;
-	private ArticleRequest articleRequest;
-	private DocumentRequest documentRequest;
+	private ArticleRequest article;
+	private DocumentRequest document;
 	public DetailDocumentRequest(Integer id)
 	{
 		super();

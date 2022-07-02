@@ -36,12 +36,12 @@ public class ImageService
 			ImageResponse imageResponse = ObjectMapperUtility.map(image.get(),ImageResponse.class);
 			return new ImageResponseFindById(imageResponse);
 		}
-		return new ImageResponseFindById("Non trouvé");
+		return new ImageResponseFindById("");
 	}
 	public ImageResponseSave save(ImageRequest imageRequest)
 	{
 		ImageResponseError imageResponseError = checkImageResponseError(imageRequest);
-		if(imageResponseError.isHave_error())
+		if(imageResponseError.isHaveError())
 		{
 			return new ImageResponseSave(imageResponseError);
 		}
@@ -54,7 +54,7 @@ public class ImageService
 			}
 			catch(Exception e)
 			{
-				imageResponseError.setHave_error(true);
+				imageResponseError.setHaveError(true);
 				return  new ImageResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class ImageService
 	private ImageResponseError checkImageResponseError (ImageRequest imageRequest)
 	{
 		ImageResponseError imageResponseError = new ImageResponseError();
-		imageResponseError.setHave_error(false);
-		if(Utility.isEmpty(imageRequest.getId().toString()) )
+		imageResponseError.setHaveError(false);
+		if(Utility.isEmpty(imageRequest.getId()) )
 		{
 			imageRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(imageRequest.get()) )
 		//{
-				//imageResponseError.setHave_error(true);
+				//imageResponseError.setHaveError(true);
 				//imageResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return imageResponseError;

@@ -14,8 +14,8 @@ public class DepotArticleResponse
 	private double quantite;
 	private double quantiteMin;
 	private boolean alertQuantiteMin;
-	private DepotResponse depotResponse;
-	private ArticleResponse articleResponse;
+	private DepotResponse depot;
+	private ArticleResponse article;
 	public DepotArticleResponse(Integer id)
 	{
 		super();

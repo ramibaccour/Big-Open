@@ -20,15 +20,15 @@ public class ArticleRequest
 	private String referenceFournisseur;
 	private String typeArticle;
 	private Integer isDeleted;
-	private CollaborateurRequest collaborateurRequest;
-	private TvaRequest tvaRequest;
-	private UniteRequest uniteRequest;
-	private List<ArticleCategorieRequest> listArticleCategorieRequest;
-	private List<ArticlePrixRequest> listArticlePrixRequest;
-	private List<ArticleTaxRequest> listArticleTaxRequest;
-	private List<DepotArticleRequest> listDepotArticleRequest;
-	private List<DetailDocumentRequest> listDetailDocumentRequest;
-	private List<ImageRequest> listImageRequest;
+	private CollaborateurRequest collaborateur;
+	private TvaRequest tva;
+	private UniteRequest unite;
+	private List<ArticleCategorieRequest> listArticleCategorie;
+	private List<ArticlePrixRequest> listArticlePrix;
+	private List<ArticleTaxRequest> listArticleTax;
+	private List<DepotArticleRequest> listDepotArticle;
+	private List<DetailDocumentRequest> listDetailDocument;
+	private List<ImageRequest> listImage;
 	public ArticleRequest(Integer id)
 	{
 		super();

@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `detail_document_tax`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `detail_document_tax` (
-  `int` int NOT NULL,
+  `id` int NOT NULL,
   `id_tax` int DEFAULT NULL,
   `nom_lng1` varchar(45) DEFAULT NULL,
   `nom_lng2` varchar(45) DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `detail_document_tax` (
   `signe` varchar(45) DEFAULT NULL,
   `valeur` double DEFAULT NULL,
   `calculer_avant_tva` tinyint DEFAULT NULL,
-  PRIMARY KEY (`int`),
+  PRIMARY KEY (`id`),
   KEY `id_tax_doc_idx` (`id_tax`),
   CONSTRAINT `id_tax_doc` FOREIGN KEY (`id_tax`) REFERENCES `tax` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-27  7:38:11
+-- Dump completed on 2022-07-02 16:39:42

@@ -36,12 +36,12 @@ public class MonnaieService
 			MonnaieResponse monnaieResponse = ObjectMapperUtility.map(monnaie.get(),MonnaieResponse.class);
 			return new MonnaieResponseFindById(monnaieResponse);
 		}
-		return new MonnaieResponseFindById("Non trouvé");
+		return new MonnaieResponseFindById("");
 	}
 	public MonnaieResponseSave save(MonnaieRequest monnaieRequest)
 	{
 		MonnaieResponseError monnaieResponseError = checkMonnaieResponseError(monnaieRequest);
-		if(monnaieResponseError.isHave_error())
+		if(monnaieResponseError.isHaveError())
 		{
 			return new MonnaieResponseSave(monnaieResponseError);
 		}
@@ -54,7 +54,7 @@ public class MonnaieService
 			}
 			catch(Exception e)
 			{
-				monnaieResponseError.setHave_error(true);
+				monnaieResponseError.setHaveError(true);
 				return  new MonnaieResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class MonnaieService
 	private MonnaieResponseError checkMonnaieResponseError (MonnaieRequest monnaieRequest)
 	{
 		MonnaieResponseError monnaieResponseError = new MonnaieResponseError();
-		monnaieResponseError.setHave_error(false);
-		if(Utility.isEmpty(monnaieRequest.getId().toString()) )
+		monnaieResponseError.setHaveError(false);
+		if(Utility.isEmpty(monnaieRequest.getId()) )
 		{
 			monnaieRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(monnaieRequest.get()) )
 		//{
-				//monnaieResponseError.setHave_error(true);
+				//monnaieResponseError.setHaveError(true);
 				//monnaieResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return monnaieResponseError;

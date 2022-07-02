@@ -14,8 +14,8 @@ public class DepotArticleRequest
 	private double quantite;
 	private double quantiteMin;
 	private boolean alertQuantiteMin;
-	private DepotRequest depotRequest;
-	private ArticleRequest articleRequest;
+	private DepotRequest depot;
+	private ArticleRequest article;
 	public DepotArticleRequest(Integer id)
 	{
 		super();

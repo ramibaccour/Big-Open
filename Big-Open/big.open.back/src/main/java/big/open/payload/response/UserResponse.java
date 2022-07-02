@@ -1,10 +1,8 @@
 package big.open.payload.response;
+import big.open.payload.response.error.UserResponseError;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import java.util.List;
-import java.time.LocalDateTime;
 import lombok.NoArgsConstructor;
-import org.springframework.data.geo.Point;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -14,10 +12,18 @@ public class UserResponse
 	private String username;
 	private String password;
 	private Integer isDeleted;
-	private GroupeModuleResponse groupeModuleResponse;
+	private LngResponse lng;
+	private String jwt;
+	private GroupeModuleResponse groupeModule;
+	private UserResponseError responseError;
 	public UserResponse(Integer id)
 	{
 		super();
 		this.id = id;
+	}
+	public UserResponse(UserResponseError responseError)
+	{
+		super();
+		this.responseError = responseError;
 	}
 }

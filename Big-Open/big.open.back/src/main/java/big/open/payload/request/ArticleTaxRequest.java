@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 public class ArticleTaxRequest
 {
 	private Integer id;
-	private TaxRequest taxRequest;
-	private ArticleRequest articleRequest;
+	private TaxRequest tax;
+	private ArticleRequest article;
 	public ArticleTaxRequest(Integer id)
 	{
 		super();

@@ -36,12 +36,12 @@ public class GroupeModuleService
 			GroupeModuleResponse groupeModuleResponse = ObjectMapperUtility.map(groupeModule.get(),GroupeModuleResponse.class);
 			return new GroupeModuleResponseFindById(groupeModuleResponse);
 		}
-		return new GroupeModuleResponseFindById("Non trouvé");
+		return new GroupeModuleResponseFindById("");
 	}
 	public GroupeModuleResponseSave save(GroupeModuleRequest groupeModuleRequest)
 	{
 		GroupeModuleResponseError groupeModuleResponseError = checkGroupeModuleResponseError(groupeModuleRequest);
-		if(groupeModuleResponseError.isHave_error())
+		if(groupeModuleResponseError.isHaveError())
 		{
 			return new GroupeModuleResponseSave(groupeModuleResponseError);
 		}
@@ -54,7 +54,7 @@ public class GroupeModuleService
 			}
 			catch(Exception e)
 			{
-				groupeModuleResponseError.setHave_error(true);
+				groupeModuleResponseError.setHaveError(true);
 				return  new GroupeModuleResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class GroupeModuleService
 	private GroupeModuleResponseError checkGroupeModuleResponseError (GroupeModuleRequest groupeModuleRequest)
 	{
 		GroupeModuleResponseError groupeModuleResponseError = new GroupeModuleResponseError();
-		groupeModuleResponseError.setHave_error(false);
-		if(Utility.isEmpty(groupeModuleRequest.getId().toString()) )
+		groupeModuleResponseError.setHaveError(false);
+		if(Utility.isEmpty(groupeModuleRequest.getId()) )
 		{
 			groupeModuleRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(groupeModuleRequest.get()) )
 		//{
-				//groupeModuleResponseError.setHave_error(true);
+				//groupeModuleResponseError.setHaveError(true);
 				//groupeModuleResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return groupeModuleResponseError;

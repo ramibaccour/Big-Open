@@ -14,10 +14,10 @@ public class CategorieResponse
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private CategorieResponse categorieResponse;
-	private List<ArticleCategorieResponse> listArticleCategorieResponse;
-	private List<CategorieResponse> listCategorieResponse;
-	private List<ImageResponse> listImageResponse;
+	private CategorieResponse categorie;
+	private List<ArticleCategorieResponse> listArticleCategorie;
+	private List<CategorieResponse> listCategorie;
+	private List<ImageResponse> listImage;
 	public CategorieResponse(Integer id)
 	{
 		super();

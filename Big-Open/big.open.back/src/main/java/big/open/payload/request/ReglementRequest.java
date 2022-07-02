@@ -20,11 +20,10 @@ public class ReglementRequest
 	private String ribCompteSource;
 	private String numeroTraite;
 	private String typeReglement;
-	private BanqueRequest banqueRequest;
-	private CaisseRequest caisseRequest;
-	private DocumentRequest documentRequest;
-	private DocumentRequest documentAvoirRequest;
-	private RetenuSourceRequest retenuSourceRequest;
+	private BanqueRequest banque;
+	private CaisseRequest caisse;
+	private DocumentRequest document;
+	private RetenuSourceRequest retenuSource;
 	public ReglementRequest(Integer id)
 	{
 		super();

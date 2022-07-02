@@ -17,10 +17,12 @@ import javax.validation.constraints.NotNull;
 public class ValeurCarateristique 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="valeur")
 	private String valeur;
-	@Transient	private Caracteristique caracteristique;
+	@Transient
+	private Caracteristique caracteristique;
 }

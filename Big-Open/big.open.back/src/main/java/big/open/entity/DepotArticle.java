@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class DepotArticle 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="quantite")
@@ -26,6 +27,8 @@ public class DepotArticle
 	private double quantiteMin;
 	@Column(name="alert_quantite_min")
 	private boolean alertQuantiteMin;
-	@Transient	private Depot depot;
-	@Transient	private Article article;
+	@Transient
+	private Depot depot;
+	@Transient
+	private Article article;
 }

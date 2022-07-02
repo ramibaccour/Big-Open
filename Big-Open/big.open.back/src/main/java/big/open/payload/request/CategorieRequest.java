@@ -14,10 +14,10 @@ public class CategorieRequest
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private CategorieRequest categorieRequest;
-	private List<ArticleCategorieRequest> listArticleCategorieRequest;
-	private List<CategorieRequest> listCategorieRequest;
-	private List<ImageRequest> listImageRequest;
+	private CategorieRequest categorie;
+	private List<ArticleCategorieRequest> listArticleCategorie;
+	private List<CategorieRequest> listCategorie;
+	private List<ImageRequest> listImage;
 	public CategorieRequest(Integer id)
 	{
 		super();

@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Module 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="nom_lng1")
@@ -26,7 +27,8 @@ public class Module
 	private String nomLng2;
 	@Column(name="nom_lng3")
 	private String nomLng3;
-	@Transient	private Module module;
+	@Transient
+	private Module module;
 	@Transient
 	private List<DetailGroupeModule> listDetailGroupeModule;
 	@Transient

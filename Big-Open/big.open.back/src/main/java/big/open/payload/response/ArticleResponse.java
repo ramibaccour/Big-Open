@@ -20,15 +20,15 @@ public class ArticleResponse
 	private String referenceFournisseur;
 	private String typeArticle;
 	private Integer isDeleted;
-	private CollaborateurResponse collaborateurResponse;
-	private TvaResponse tvaResponse;
-	private UniteResponse uniteResponse;
-	private List<ArticleCategorieResponse> listArticleCategorieResponse;
-	private List<ArticlePrixResponse> listArticlePrixResponse;
-	private List<ArticleTaxResponse> listArticleTaxResponse;
-	private List<DepotArticleResponse> listDepotArticleResponse;
-	private List<DetailDocumentResponse> listDetailDocumentResponse;
-	private List<ImageResponse> listImageResponse;
+	private CollaborateurResponse collaborateur;
+	private TvaResponse tva;
+	private UniteResponse unite;
+	private List<ArticleCategorieResponse> listArticleCategorie;
+	private List<ArticlePrixResponse> listArticlePrix;
+	private List<ArticleTaxResponse> listArticleTax;
+	private List<DepotArticleResponse> listDepotArticle;
+	private List<DetailDocumentResponse> listDetailDocument;
+	private List<ImageResponse> listImage;
 	public ArticleResponse(Integer id)
 	{
 		super();

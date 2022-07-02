@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Monnaie 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="nom_lng1")
@@ -26,5 +27,6 @@ public class Monnaie
 	private String nomLng2;
 	@Column(name="nom_lng3")
 	private String nomLng3;
-	@Transient	private Image image;
+	@Transient
+	private Image image;
 }

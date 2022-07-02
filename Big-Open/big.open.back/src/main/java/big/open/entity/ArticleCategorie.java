@@ -17,9 +17,12 @@ import javax.validation.constraints.NotNull;
 public class ArticleCategorie 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
-	@Transient	private Categorie categorie;
-	@Transient	private Article article;
+	@Transient
+	private Categorie categorie;
+	@Transient
+	private Article article;
 }

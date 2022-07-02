@@ -36,12 +36,12 @@ public class UniteService
 			UniteResponse uniteResponse = ObjectMapperUtility.map(unite.get(),UniteResponse.class);
 			return new UniteResponseFindById(uniteResponse);
 		}
-		return new UniteResponseFindById("Non trouvé");
+		return new UniteResponseFindById("");
 	}
 	public UniteResponseSave save(UniteRequest uniteRequest)
 	{
 		UniteResponseError uniteResponseError = checkUniteResponseError(uniteRequest);
-		if(uniteResponseError.isHave_error())
+		if(uniteResponseError.isHaveError())
 		{
 			return new UniteResponseSave(uniteResponseError);
 		}
@@ -54,7 +54,7 @@ public class UniteService
 			}
 			catch(Exception e)
 			{
-				uniteResponseError.setHave_error(true);
+				uniteResponseError.setHaveError(true);
 				return  new UniteResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class UniteService
 	private UniteResponseError checkUniteResponseError (UniteRequest uniteRequest)
 	{
 		UniteResponseError uniteResponseError = new UniteResponseError();
-		uniteResponseError.setHave_error(false);
-		if(Utility.isEmpty(uniteRequest.getId().toString()) )
+		uniteResponseError.setHaveError(false);
+		if(Utility.isEmpty(uniteRequest.getId()) )
 		{
 			uniteRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(uniteRequest.get()) )
 		//{
-				//uniteResponseError.setHave_error(true);
+				//uniteResponseError.setHaveError(true);
 				//uniteResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return uniteResponseError;

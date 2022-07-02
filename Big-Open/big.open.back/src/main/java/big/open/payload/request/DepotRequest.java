@@ -14,8 +14,8 @@ public class DepotRequest
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private CoordonneeRequest coordonneeRequest;
-	private List<DepotArticleRequest> listDepotArticleRequest;
+	private CoordonneeRequest coordonnee;
+	private List<DepotArticleRequest> listDepotArticle;
 	public DepotRequest(Integer id)
 	{
 		super();

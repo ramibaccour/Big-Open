@@ -16,5 +16,5 @@ public class SocieteResponseError
 	private String idTva;
 	private String idMonnaie;
 	private String idImage;
-	private boolean have_error;
+	private boolean haveError;
 }

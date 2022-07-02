@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Reglement 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="montant")
@@ -38,9 +39,12 @@ public class Reglement
 	private String numeroTraite;
 	@Column(name="type_reglement")
 	private String typeReglement;
-	@Transient	private Banque banque;
-	@Transient	private Caisse caisse;
-	@Transient	private Document document;
-	@Transient	private Document documentAvoir;
-	@Transient	private RetenuSource retenuSource;
+	@Transient
+	private Banque banque;
+	@Transient
+	private Caisse caisse;
+	@Transient
+	private Document document;
+	@Transient
+	private RetenuSource retenuSource;
 }

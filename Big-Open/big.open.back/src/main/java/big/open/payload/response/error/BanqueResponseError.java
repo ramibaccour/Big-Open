@@ -12,5 +12,5 @@ public class BanqueResponseError
 	private String nomLng2;
 	private String nomLng3;
 	private String rib;
-	private boolean have_error;
+	private boolean haveError;
 }

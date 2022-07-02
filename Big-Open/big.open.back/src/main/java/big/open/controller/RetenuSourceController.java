@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/retenu_source")
+@RequestMapping("/api/retenuSource")
 public class RetenuSourceController 
 {
 	@Autowired

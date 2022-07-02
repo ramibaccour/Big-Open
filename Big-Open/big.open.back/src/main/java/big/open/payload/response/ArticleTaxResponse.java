@@ -11,8 +11,8 @@ import org.springframework.data.geo.Point;
 public class ArticleTaxResponse
 {
 	private Integer id;
-	private TaxResponse taxResponse;
-	private ArticleResponse articleResponse;
+	private TaxResponse tax;
+	private ArticleResponse article;
 	public ArticleTaxResponse(Integer id)
 	{
 		super();

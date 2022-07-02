@@ -36,12 +36,12 @@ public class DetailGroupeModuleService
 			DetailGroupeModuleResponse detailGroupeModuleResponse = ObjectMapperUtility.map(detailGroupeModule.get(),DetailGroupeModuleResponse.class);
 			return new DetailGroupeModuleResponseFindById(detailGroupeModuleResponse);
 		}
-		return new DetailGroupeModuleResponseFindById("Non trouvé");
+		return new DetailGroupeModuleResponseFindById("");
 	}
 	public DetailGroupeModuleResponseSave save(DetailGroupeModuleRequest detailGroupeModuleRequest)
 	{
 		DetailGroupeModuleResponseError detailGroupeModuleResponseError = checkDetailGroupeModuleResponseError(detailGroupeModuleRequest);
-		if(detailGroupeModuleResponseError.isHave_error())
+		if(detailGroupeModuleResponseError.isHaveError())
 		{
 			return new DetailGroupeModuleResponseSave(detailGroupeModuleResponseError);
 		}
@@ -54,7 +54,7 @@ public class DetailGroupeModuleService
 			}
 			catch(Exception e)
 			{
-				detailGroupeModuleResponseError.setHave_error(true);
+				detailGroupeModuleResponseError.setHaveError(true);
 				return  new DetailGroupeModuleResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class DetailGroupeModuleService
 	private DetailGroupeModuleResponseError checkDetailGroupeModuleResponseError (DetailGroupeModuleRequest detailGroupeModuleRequest)
 	{
 		DetailGroupeModuleResponseError detailGroupeModuleResponseError = new DetailGroupeModuleResponseError();
-		detailGroupeModuleResponseError.setHave_error(false);
-		if(Utility.isEmpty(detailGroupeModuleRequest.getId().toString()) )
+		detailGroupeModuleResponseError.setHaveError(false);
+		if(Utility.isEmpty(detailGroupeModuleRequest.getId()) )
 		{
 			detailGroupeModuleRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(detailGroupeModuleRequest.get()) )
 		//{
-				//detailGroupeModuleResponseError.setHave_error(true);
+				//detailGroupeModuleResponseError.setHaveError(true);
 				//detailGroupeModuleResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return detailGroupeModuleResponseError;

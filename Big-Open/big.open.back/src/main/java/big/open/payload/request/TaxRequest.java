@@ -19,8 +19,8 @@ public class TaxRequest
 	private String valeur;
 	private String group;
 	private boolean calculerAvantTva;
-	private List<ArticleTaxRequest> listArticleTaxRequest;
-	private List<DetailDocumentTaxRequest> listDetailDocumentTaxRequest;
+	private List<ArticleTaxRequest> listArticleTax;
+	private List<DetailDocumentTaxRequest> listDetailDocumentTax;
 	public TaxRequest(Integer id)
 	{
 		super();

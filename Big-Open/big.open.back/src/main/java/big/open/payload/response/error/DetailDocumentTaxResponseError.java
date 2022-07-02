@@ -15,5 +15,5 @@ public class DetailDocumentTaxResponseError
 	private String signe;
 	private String valeur;
 	private String calculerAvantTva;
-	private boolean have_error;
+	private boolean haveError;
 }

@@ -16,11 +16,11 @@ public class ImageResponse
 	private String resolution;
 	private String type;
 	private String typeObjet;
-	private ArticleResponse articleResponse;
-	private CategorieResponse categorieResponse;
-	private CollaborateurResponse collaborateurResponse;
-	private SocieteResponse societeResponse;
-	private List<MonnaieResponse> listMonnaieResponse;
+	private ArticleResponse article;
+	private CategorieResponse categorie;
+	private CollaborateurResponse collaborateur;
+	private SocieteResponse societe;
+	private List<MonnaieResponse> listMonnaie;
 	public ImageResponse(Integer id)
 	{
 		super();

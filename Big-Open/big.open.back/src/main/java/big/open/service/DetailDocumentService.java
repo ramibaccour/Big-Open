@@ -36,12 +36,12 @@ public class DetailDocumentService
 			DetailDocumentResponse detailDocumentResponse = ObjectMapperUtility.map(detailDocument.get(),DetailDocumentResponse.class);
 			return new DetailDocumentResponseFindById(detailDocumentResponse);
 		}
-		return new DetailDocumentResponseFindById("Non trouvé");
+		return new DetailDocumentResponseFindById("");
 	}
 	public DetailDocumentResponseSave save(DetailDocumentRequest detailDocumentRequest)
 	{
 		DetailDocumentResponseError detailDocumentResponseError = checkDetailDocumentResponseError(detailDocumentRequest);
-		if(detailDocumentResponseError.isHave_error())
+		if(detailDocumentResponseError.isHaveError())
 		{
 			return new DetailDocumentResponseSave(detailDocumentResponseError);
 		}
@@ -54,7 +54,7 @@ public class DetailDocumentService
 			}
 			catch(Exception e)
 			{
-				detailDocumentResponseError.setHave_error(true);
+				detailDocumentResponseError.setHaveError(true);
 				return  new DetailDocumentResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class DetailDocumentService
 	private DetailDocumentResponseError checkDetailDocumentResponseError (DetailDocumentRequest detailDocumentRequest)
 	{
 		DetailDocumentResponseError detailDocumentResponseError = new DetailDocumentResponseError();
-		detailDocumentResponseError.setHave_error(false);
-		if(Utility.isEmpty(detailDocumentRequest.getId().toString()) )
+		detailDocumentResponseError.setHaveError(false);
+		if(Utility.isEmpty(detailDocumentRequest.getId()) )
 		{
 			detailDocumentRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(detailDocumentRequest.get()) )
 		//{
-				//detailDocumentResponseError.setHave_error(true);
+				//detailDocumentResponseError.setHaveError(true);
 				//detailDocumentResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return detailDocumentResponseError;

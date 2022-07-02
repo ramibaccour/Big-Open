@@ -10,5 +10,5 @@ public class RetenuSourceResponseError
 	private String id;
 	private String taux;
 	private String type;
-	private boolean have_error;
+	private boolean haveError;
 }

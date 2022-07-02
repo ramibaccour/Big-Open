@@ -12,8 +12,8 @@ public class DetailGroupeModuleResponse
 {
 	private Integer id;
 	private boolean valeur;
-	private GroupeModuleResponse groupeModuleResponse;
-	private ModuleResponse moduleResponse;
+	private GroupeModuleResponse groupeModule;
+	private ModuleResponse module;
 	public DetailGroupeModuleResponse(Integer id)
 	{
 		super();

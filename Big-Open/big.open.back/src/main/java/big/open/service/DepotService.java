@@ -36,12 +36,12 @@ public class DepotService
 			DepotResponse depotResponse = ObjectMapperUtility.map(depot.get(),DepotResponse.class);
 			return new DepotResponseFindById(depotResponse);
 		}
-		return new DepotResponseFindById("Non trouvé");
+		return new DepotResponseFindById("");
 	}
 	public DepotResponseSave save(DepotRequest depotRequest)
 	{
 		DepotResponseError depotResponseError = checkDepotResponseError(depotRequest);
-		if(depotResponseError.isHave_error())
+		if(depotResponseError.isHaveError())
 		{
 			return new DepotResponseSave(depotResponseError);
 		}
@@ -54,7 +54,7 @@ public class DepotService
 			}
 			catch(Exception e)
 			{
-				depotResponseError.setHave_error(true);
+				depotResponseError.setHaveError(true);
 				return  new DepotResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class DepotService
 	private DepotResponseError checkDepotResponseError (DepotRequest depotRequest)
 	{
 		DepotResponseError depotResponseError = new DepotResponseError();
-		depotResponseError.setHave_error(false);
-		if(Utility.isEmpty(depotRequest.getId().toString()) )
+		depotResponseError.setHaveError(false);
+		if(Utility.isEmpty(depotRequest.getId()) )
 		{
 			depotRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(depotRequest.get()) )
 		//{
-				//depotResponseError.setHave_error(true);
+				//depotResponseError.setHaveError(true);
 				//depotResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return depotResponseError;

@@ -9,5 +9,5 @@ public class TvaResponseError
 {
 	private String id;
 	private String taux;
-	private boolean have_error;
+	private boolean haveError;
 }

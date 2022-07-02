@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/depot_article")
+@RequestMapping("/api/depotArticle")
 public class DepotArticleController 
 {
 	@Autowired

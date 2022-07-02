@@ -36,12 +36,12 @@ public class CategorieService
 			CategorieResponse categorieResponse = ObjectMapperUtility.map(categorie.get(),CategorieResponse.class);
 			return new CategorieResponseFindById(categorieResponse);
 		}
-		return new CategorieResponseFindById("Non trouvé");
+		return new CategorieResponseFindById("");
 	}
 	public CategorieResponseSave save(CategorieRequest categorieRequest)
 	{
 		CategorieResponseError categorieResponseError = checkCategorieResponseError(categorieRequest);
-		if(categorieResponseError.isHave_error())
+		if(categorieResponseError.isHaveError())
 		{
 			return new CategorieResponseSave(categorieResponseError);
 		}
@@ -54,7 +54,7 @@ public class CategorieService
 			}
 			catch(Exception e)
 			{
-				categorieResponseError.setHave_error(true);
+				categorieResponseError.setHaveError(true);
 				return  new CategorieResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class CategorieService
 	private CategorieResponseError checkCategorieResponseError (CategorieRequest categorieRequest)
 	{
 		CategorieResponseError categorieResponseError = new CategorieResponseError();
-		categorieResponseError.setHave_error(false);
-		if(Utility.isEmpty(categorieRequest.getId().toString()) )
+		categorieResponseError.setHaveError(false);
+		if(Utility.isEmpty(categorieRequest.getId()) )
 		{
 			categorieRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(categorieRequest.get()) )
 		//{
-				//categorieResponseError.setHave_error(true);
+				//categorieResponseError.setHaveError(true);
 				//categorieResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return categorieResponseError;

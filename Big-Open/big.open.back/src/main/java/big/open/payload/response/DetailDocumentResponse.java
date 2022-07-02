@@ -18,8 +18,8 @@ public class DetailDocumentResponse
 	private double articlePrix;
 	private Integer tauxTva;
 	private double totalHt;
-	private ArticleResponse articleResponse;
-	private DocumentResponse documentResponse;
+	private ArticleResponse article;
+	private DocumentResponse document;
 	public DetailDocumentResponse(Integer id)
 	{
 		super();

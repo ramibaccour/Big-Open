@@ -14,7 +14,7 @@ public class MonnaieResponse
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private ImageResponse imageResponse;
+	private ImageResponse image;
 	public MonnaieResponse(Integer id)
 	{
 		super();

@@ -36,12 +36,12 @@ public class DepotArticleService
 			DepotArticleResponse depotArticleResponse = ObjectMapperUtility.map(depotArticle.get(),DepotArticleResponse.class);
 			return new DepotArticleResponseFindById(depotArticleResponse);
 		}
-		return new DepotArticleResponseFindById("Non trouvé");
+		return new DepotArticleResponseFindById("");
 	}
 	public DepotArticleResponseSave save(DepotArticleRequest depotArticleRequest)
 	{
 		DepotArticleResponseError depotArticleResponseError = checkDepotArticleResponseError(depotArticleRequest);
-		if(depotArticleResponseError.isHave_error())
+		if(depotArticleResponseError.isHaveError())
 		{
 			return new DepotArticleResponseSave(depotArticleResponseError);
 		}
@@ -54,7 +54,7 @@ public class DepotArticleService
 			}
 			catch(Exception e)
 			{
-				depotArticleResponseError.setHave_error(true);
+				depotArticleResponseError.setHaveError(true);
 				return  new DepotArticleResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class DepotArticleService
 	private DepotArticleResponseError checkDepotArticleResponseError (DepotArticleRequest depotArticleRequest)
 	{
 		DepotArticleResponseError depotArticleResponseError = new DepotArticleResponseError();
-		depotArticleResponseError.setHave_error(false);
-		if(Utility.isEmpty(depotArticleRequest.getId().toString()) )
+		depotArticleResponseError.setHaveError(false);
+		if(Utility.isEmpty(depotArticleRequest.getId()) )
 		{
 			depotArticleRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(depotArticleRequest.get()) )
 		//{
-				//depotArticleResponseError.setHave_error(true);
+				//depotArticleResponseError.setHaveError(true);
 				//depotArticleResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return depotArticleResponseError;

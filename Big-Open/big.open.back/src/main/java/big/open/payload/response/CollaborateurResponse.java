@@ -17,10 +17,10 @@ public class CollaborateurResponse
 	private String uniteDelaiPaiement;
 	private String typeArticlePrix;
 	private String typeCollaborateur;
-	private List<ArticleResponse> listArticleResponse;
-	private List<CoordonneeResponse> listCoordonneeResponse;
-	private List<DocumentResponse> listDocumentResponse;
-	private List<ImageResponse> listImageResponse;
+	private List<ArticleResponse> listArticle;
+	private List<CoordonneeResponse> listCoordonnee;
+	private List<DocumentResponse> listDocument;
+	private List<ImageResponse> listImage;
 	public CollaborateurResponse(Integer id)
 	{
 		super();

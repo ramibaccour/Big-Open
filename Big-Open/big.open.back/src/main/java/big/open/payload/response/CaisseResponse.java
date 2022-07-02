@@ -15,7 +15,7 @@ public class CaisseResponse
 	private String nomLng2;
 	private String nomLng3;
 	private double valeur;
-	private List<ReglementResponse> listReglementResponse;
+	private List<ReglementResponse> listReglement;
 	public CaisseResponse(Integer id)
 	{
 		super();

@@ -19,8 +19,8 @@ public class TaxResponse
 	private String valeur;
 	private String group;
 	private boolean calculerAvantTva;
-	private List<ArticleTaxResponse> listArticleTaxResponse;
-	private List<DetailDocumentTaxResponse> listDetailDocumentTaxResponse;
+	private List<ArticleTaxResponse> listArticleTax;
+	private List<DetailDocumentTaxResponse> listDetailDocumentTax;
 	public TaxResponse(Integer id)
 	{
 		super();

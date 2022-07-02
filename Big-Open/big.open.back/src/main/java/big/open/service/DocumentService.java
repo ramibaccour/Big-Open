@@ -36,12 +36,12 @@ public class DocumentService
 			DocumentResponse documentResponse = ObjectMapperUtility.map(document.get(),DocumentResponse.class);
 			return new DocumentResponseFindById(documentResponse);
 		}
-		return new DocumentResponseFindById("Non trouvé");
+		return new DocumentResponseFindById("");
 	}
 	public DocumentResponseSave save(DocumentRequest documentRequest)
 	{
 		DocumentResponseError documentResponseError = checkDocumentResponseError(documentRequest);
-		if(documentResponseError.isHave_error())
+		if(documentResponseError.isHaveError())
 		{
 			return new DocumentResponseSave(documentResponseError);
 		}
@@ -54,7 +54,7 @@ public class DocumentService
 			}
 			catch(Exception e)
 			{
-				documentResponseError.setHave_error(true);
+				documentResponseError.setHaveError(true);
 				return  new DocumentResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class DocumentService
 	private DocumentResponseError checkDocumentResponseError (DocumentRequest documentRequest)
 	{
 		DocumentResponseError documentResponseError = new DocumentResponseError();
-		documentResponseError.setHave_error(false);
-		if(Utility.isEmpty(documentRequest.getId().toString()) )
+		documentResponseError.setHaveError(false);
+		if(Utility.isEmpty(documentRequest.getId()) )
 		{
 			documentRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(documentRequest.get()) )
 		//{
-				//documentResponseError.setHave_error(true);
+				//documentResponseError.setHaveError(true);
 				//documentResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return documentResponseError;

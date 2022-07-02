@@ -14,7 +14,7 @@ public class UniteRequest
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private List<ArticleRequest> listArticleRequest;
+	private List<ArticleRequest> listArticle;
 	public UniteRequest(Integer id)
 	{
 		super();

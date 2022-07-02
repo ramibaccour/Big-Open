@@ -13,6 +13,9 @@ import big.open.security.jwt.JwtUtils;
 import big.open.utility.ObjectMapperUtility;
 import big.open.utility.Utility;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 @Service
 public class UserService
@@ -33,12 +36,34 @@ public class UserService
 			UserResponse userResponse = ObjectMapperUtility.map(user.get(),UserResponse.class);
 			return new UserResponseFindById(userResponse);
 		}
-		return new UserResponseFindById("Non trouv�");
+		return new UserResponseFindById("");
+	}
+	public UserResponse signin(UserRequest userRequest)
+	{
+		var user = userRepository.findByUsernameAndIsDeleted(userRequest.getUsername(), 0);
+		if (user.isPresent())
+		{
+			var verifPassword = encoder.matches( userRequest.getPassword(), user.get().getPassword()) ;
+			if(verifPassword)
+			{
+				var usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userRequest.getUsername(), userRequest.getPassword());
+				Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+				
+				SecurityContextHolder.getContext().setAuthentication(authentication);
+				String jwt = jwtUtils.generateJwtToken(userRequest.getUsername());										
+				UserResponse userResponse = ObjectMapperUtility.map(user.get(), UserResponse.class);
+				userResponse.setJwt(jwt);
+				return userResponse;
+			}
+		}
+		UserResponseError userResponseError = new UserResponseError("les données d'authentification sont incorrectes");
+		userResponseError.setHaveError(true);
+		return new UserResponse(userResponseError);
 	}
 	public UserResponseSave save(UserRequest userRequest)
 	{
 		UserResponseError userResponseError = checkUserResponseError(userRequest);
-		if(userResponseError.isHave_error())
+		if(userResponseError.isHaveError())
 		{
 			return new UserResponseSave(userResponseError);
 		}
@@ -46,12 +71,14 @@ public class UserService
 		{
 			try
 			{
+				if(userRequest.getId() != -1)
+					userRequest.setPassword(encoder.encode(userRequest.getPassword()) );
 				User user = userRepository.save(ObjectMapperUtility.map(userRequest, User.class));
 				return  new UserResponseSave(ObjectMapperUtility.map(user, UserResponse.class));
 			}
 			catch(Exception e)
 			{
-				userResponseError.setHave_error(true);
+				userResponseError.setHaveError(true);
 				return  new UserResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -76,14 +103,14 @@ public class UserService
 	private UserResponseError checkUserResponseError (UserRequest userRequest)
 	{
 		UserResponseError userResponseError = new UserResponseError();
-		userResponseError.setHave_error(false);
-		if(Utility.isEmpty(userRequest.getId().toString()) )
+		userResponseError.setHaveError(false);
+		if(Utility.isEmpty(userRequest.getId()) )
 		{
 			userRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(userRequest.get()) )
 		//{
-				//userResponseError.setHave_error(true);
+				//userResponseError.setHaveError(true);
 				//userResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return userResponseError;

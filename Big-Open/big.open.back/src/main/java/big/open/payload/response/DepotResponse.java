@@ -14,8 +14,8 @@ public class DepotResponse
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private CoordonneeResponse coordonneeResponse;
-	private List<DepotArticleResponse> listDepotArticleResponse;
+	private CoordonneeResponse coordonnee;
+	private List<DepotArticleResponse> listDepotArticle;
 	public DepotResponse(Integer id)
 	{
 		super();

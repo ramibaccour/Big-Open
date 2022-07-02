@@ -19,8 +19,8 @@ public class SocieteRequest
 	private Integer idTva;
 	private Integer idMonnaie;
 	private Integer idImage;
-	private List<CoordonneeRequest> listCoordonneeRequest;
-	private List<ImageRequest> listImageRequest;
+	private List<CoordonneeRequest> listCoordonnee;
+	private List<ImageRequest> listImage;
 	public SocieteRequest(Integer id)
 	{
 		super();

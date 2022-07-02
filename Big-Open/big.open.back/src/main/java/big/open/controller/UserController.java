@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import big.open.payload.request.UserRequest;
+import big.open.payload.response.UserResponse;
 import big.open.payload.response.UserResponseFindById;
 import big.open.payload.response.UserResponseSave;
 import big.open.service.UserService;
@@ -32,6 +33,11 @@ public class UserController
 	public ResponseEntity<UserResponseSave> save(@Valid @RequestBody UserRequest userRequest) 
 	{
 		return ResponseEntity.ok(userService.save(userRequest));
+	}
+	@PostMapping("/signin")
+	public ResponseEntity<UserResponse> signin(@Valid @RequestBody UserRequest userRequest) 
+	{
+		return ResponseEntity.ok(userService.signin(userRequest));
 	}
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<String> delete(@PathVariable("id") Integer id)

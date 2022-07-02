@@ -36,12 +36,12 @@ public class ArticleTaxService
 			ArticleTaxResponse articleTaxResponse = ObjectMapperUtility.map(articleTax.get(),ArticleTaxResponse.class);
 			return new ArticleTaxResponseFindById(articleTaxResponse);
 		}
-		return new ArticleTaxResponseFindById("Non trouvé");
+		return new ArticleTaxResponseFindById("");
 	}
 	public ArticleTaxResponseSave save(ArticleTaxRequest articleTaxRequest)
 	{
 		ArticleTaxResponseError articleTaxResponseError = checkArticleTaxResponseError(articleTaxRequest);
-		if(articleTaxResponseError.isHave_error())
+		if(articleTaxResponseError.isHaveError())
 		{
 			return new ArticleTaxResponseSave(articleTaxResponseError);
 		}
@@ -54,7 +54,7 @@ public class ArticleTaxService
 			}
 			catch(Exception e)
 			{
-				articleTaxResponseError.setHave_error(true);
+				articleTaxResponseError.setHaveError(true);
 				return  new ArticleTaxResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class ArticleTaxService
 	private ArticleTaxResponseError checkArticleTaxResponseError (ArticleTaxRequest articleTaxRequest)
 	{
 		ArticleTaxResponseError articleTaxResponseError = new ArticleTaxResponseError();
-		articleTaxResponseError.setHave_error(false);
-		if(Utility.isEmpty(articleTaxRequest.getId().toString()) )
+		articleTaxResponseError.setHaveError(false);
+		if(Utility.isEmpty(articleTaxRequest.getId()) )
 		{
 			articleTaxRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(articleTaxRequest.get()) )
 		//{
-				//articleTaxResponseError.setHave_error(true);
+				//articleTaxResponseError.setHaveError(true);
 				//articleTaxResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return articleTaxResponseError;

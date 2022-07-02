@@ -36,12 +36,12 @@ public class MarqueService
 			MarqueResponse marqueResponse = ObjectMapperUtility.map(marque.get(),MarqueResponse.class);
 			return new MarqueResponseFindById(marqueResponse);
 		}
-		return new MarqueResponseFindById("Non trouvé");
+		return new MarqueResponseFindById("");
 	}
 	public MarqueResponseSave save(MarqueRequest marqueRequest)
 	{
 		MarqueResponseError marqueResponseError = checkMarqueResponseError(marqueRequest);
-		if(marqueResponseError.isHave_error())
+		if(marqueResponseError.isHaveError())
 		{
 			return new MarqueResponseSave(marqueResponseError);
 		}
@@ -54,7 +54,7 @@ public class MarqueService
 			}
 			catch(Exception e)
 			{
-				marqueResponseError.setHave_error(true);
+				marqueResponseError.setHaveError(true);
 				return  new MarqueResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class MarqueService
 	private MarqueResponseError checkMarqueResponseError (MarqueRequest marqueRequest)
 	{
 		MarqueResponseError marqueResponseError = new MarqueResponseError();
-		marqueResponseError.setHave_error(false);
-		if(Utility.isEmpty(marqueRequest.getId().toString()) )
+		marqueResponseError.setHaveError(false);
+		if(Utility.isEmpty(marqueRequest.getId()) )
 		{
 			marqueRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(marqueRequest.get()) )
 		//{
-				//marqueResponseError.setHave_error(true);
+				//marqueResponseError.setHaveError(true);
 				//marqueResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return marqueResponseError;

@@ -17,5 +17,5 @@ public class ArticleResponseError
 	private String referenceFournisseur;
 	private String typeArticle;
 	private String isDeleted;
-	private boolean have_error;
+	private boolean haveError;
 }

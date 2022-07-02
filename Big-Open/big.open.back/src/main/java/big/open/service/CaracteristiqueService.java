@@ -36,12 +36,12 @@ public class CaracteristiqueService
 			CaracteristiqueResponse caracteristiqueResponse = ObjectMapperUtility.map(caracteristique.get(),CaracteristiqueResponse.class);
 			return new CaracteristiqueResponseFindById(caracteristiqueResponse);
 		}
-		return new CaracteristiqueResponseFindById("Non trouvé");
+		return new CaracteristiqueResponseFindById("");
 	}
 	public CaracteristiqueResponseSave save(CaracteristiqueRequest caracteristiqueRequest)
 	{
 		CaracteristiqueResponseError caracteristiqueResponseError = checkCaracteristiqueResponseError(caracteristiqueRequest);
-		if(caracteristiqueResponseError.isHave_error())
+		if(caracteristiqueResponseError.isHaveError())
 		{
 			return new CaracteristiqueResponseSave(caracteristiqueResponseError);
 		}
@@ -54,7 +54,7 @@ public class CaracteristiqueService
 			}
 			catch(Exception e)
 			{
-				caracteristiqueResponseError.setHave_error(true);
+				caracteristiqueResponseError.setHaveError(true);
 				return  new CaracteristiqueResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class CaracteristiqueService
 	private CaracteristiqueResponseError checkCaracteristiqueResponseError (CaracteristiqueRequest caracteristiqueRequest)
 	{
 		CaracteristiqueResponseError caracteristiqueResponseError = new CaracteristiqueResponseError();
-		caracteristiqueResponseError.setHave_error(false);
-		if(Utility.isEmpty(caracteristiqueRequest.getId().toString()) )
+		caracteristiqueResponseError.setHaveError(false);
+		if(Utility.isEmpty(caracteristiqueRequest.getId()) )
 		{
 			caracteristiqueRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(caracteristiqueRequest.get()) )
 		//{
-				//caracteristiqueResponseError.setHave_error(true);
+				//caracteristiqueResponseError.setHaveError(true);
 				//caracteristiqueResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return caracteristiqueResponseError;

@@ -16,5 +16,5 @@ public class DocumentResponseError
 	private String totalHt;
 	private String totalTva;
 	private String totalTtc;
-	private boolean have_error;
+	private boolean haveError;
 }

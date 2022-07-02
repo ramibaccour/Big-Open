@@ -14,7 +14,7 @@ public class CaracteristiqueResponse
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private List<ValeurCarateristiqueResponse> listValeurCarateristiqueResponse;
+	private List<ValeurCarateristiqueResponse> listValeurCarateristique;
 	public CaracteristiqueResponse(Integer id)
 	{
 		super();

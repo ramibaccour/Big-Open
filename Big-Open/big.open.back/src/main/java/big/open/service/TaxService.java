@@ -36,12 +36,12 @@ public class TaxService
 			TaxResponse taxResponse = ObjectMapperUtility.map(tax.get(),TaxResponse.class);
 			return new TaxResponseFindById(taxResponse);
 		}
-		return new TaxResponseFindById("Non trouvé");
+		return new TaxResponseFindById("");
 	}
 	public TaxResponseSave save(TaxRequest taxRequest)
 	{
 		TaxResponseError taxResponseError = checkTaxResponseError(taxRequest);
-		if(taxResponseError.isHave_error())
+		if(taxResponseError.isHaveError())
 		{
 			return new TaxResponseSave(taxResponseError);
 		}
@@ -54,7 +54,7 @@ public class TaxService
 			}
 			catch(Exception e)
 			{
-				taxResponseError.setHave_error(true);
+				taxResponseError.setHaveError(true);
 				return  new TaxResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class TaxService
 	private TaxResponseError checkTaxResponseError (TaxRequest taxRequest)
 	{
 		TaxResponseError taxResponseError = new TaxResponseError();
-		taxResponseError.setHave_error(false);
-		if(Utility.isEmpty(taxRequest.getId().toString()) )
+		taxResponseError.setHaveError(false);
+		if(Utility.isEmpty(taxRequest.getId()) )
 		{
 			taxRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(taxRequest.get()) )
 		//{
-				//taxResponseError.setHave_error(true);
+				//taxResponseError.setHaveError(true);
 				//taxResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return taxResponseError;

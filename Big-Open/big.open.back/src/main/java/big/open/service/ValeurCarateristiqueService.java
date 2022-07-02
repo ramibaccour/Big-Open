@@ -36,12 +36,12 @@ public class ValeurCarateristiqueService
 			ValeurCarateristiqueResponse valeurCarateristiqueResponse = ObjectMapperUtility.map(valeurCarateristique.get(),ValeurCarateristiqueResponse.class);
 			return new ValeurCarateristiqueResponseFindById(valeurCarateristiqueResponse);
 		}
-		return new ValeurCarateristiqueResponseFindById("Non trouvé");
+		return new ValeurCarateristiqueResponseFindById("");
 	}
 	public ValeurCarateristiqueResponseSave save(ValeurCarateristiqueRequest valeurCarateristiqueRequest)
 	{
 		ValeurCarateristiqueResponseError valeurCarateristiqueResponseError = checkValeurCarateristiqueResponseError(valeurCarateristiqueRequest);
-		if(valeurCarateristiqueResponseError.isHave_error())
+		if(valeurCarateristiqueResponseError.isHaveError())
 		{
 			return new ValeurCarateristiqueResponseSave(valeurCarateristiqueResponseError);
 		}
@@ -54,7 +54,7 @@ public class ValeurCarateristiqueService
 			}
 			catch(Exception e)
 			{
-				valeurCarateristiqueResponseError.setHave_error(true);
+				valeurCarateristiqueResponseError.setHaveError(true);
 				return  new ValeurCarateristiqueResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class ValeurCarateristiqueService
 	private ValeurCarateristiqueResponseError checkValeurCarateristiqueResponseError (ValeurCarateristiqueRequest valeurCarateristiqueRequest)
 	{
 		ValeurCarateristiqueResponseError valeurCarateristiqueResponseError = new ValeurCarateristiqueResponseError();
-		valeurCarateristiqueResponseError.setHave_error(false);
-		if(Utility.isEmpty(valeurCarateristiqueRequest.getId().toString()) )
+		valeurCarateristiqueResponseError.setHaveError(false);
+		if(Utility.isEmpty(valeurCarateristiqueRequest.getId()) )
 		{
 			valeurCarateristiqueRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(valeurCarateristiqueRequest.get()) )
 		//{
-				//valeurCarateristiqueResponseError.setHave_error(true);
+				//valeurCarateristiqueResponseError.setHaveError(true);
 				//valeurCarateristiqueResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return valeurCarateristiqueResponseError;

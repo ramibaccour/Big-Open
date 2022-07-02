@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Coordonnee 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="adresse_ln1")
@@ -58,8 +59,10 @@ public class Coordonnee
 	private String siteWeb;
 	@Column(name="type_objet")
 	private String typeObjet;
-	@Transient	private Collaborateur collaborateur;
-	@Transient	private Societe societe;
+	@Transient
+	private Collaborateur collaborateur;
+	@Transient
+	private Societe societe;
 	@Transient
 	private List<Depot> listDepot;
 }

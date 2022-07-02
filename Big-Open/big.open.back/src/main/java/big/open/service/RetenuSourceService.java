@@ -36,12 +36,12 @@ public class RetenuSourceService
 			RetenuSourceResponse retenuSourceResponse = ObjectMapperUtility.map(retenuSource.get(),RetenuSourceResponse.class);
 			return new RetenuSourceResponseFindById(retenuSourceResponse);
 		}
-		return new RetenuSourceResponseFindById("Non trouvé");
+		return new RetenuSourceResponseFindById("");
 	}
 	public RetenuSourceResponseSave save(RetenuSourceRequest retenuSourceRequest)
 	{
 		RetenuSourceResponseError retenuSourceResponseError = checkRetenuSourceResponseError(retenuSourceRequest);
-		if(retenuSourceResponseError.isHave_error())
+		if(retenuSourceResponseError.isHaveError())
 		{
 			return new RetenuSourceResponseSave(retenuSourceResponseError);
 		}
@@ -54,7 +54,7 @@ public class RetenuSourceService
 			}
 			catch(Exception e)
 			{
-				retenuSourceResponseError.setHave_error(true);
+				retenuSourceResponseError.setHaveError(true);
 				return  new RetenuSourceResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class RetenuSourceService
 	private RetenuSourceResponseError checkRetenuSourceResponseError (RetenuSourceRequest retenuSourceRequest)
 	{
 		RetenuSourceResponseError retenuSourceResponseError = new RetenuSourceResponseError();
-		retenuSourceResponseError.setHave_error(false);
-		if(Utility.isEmpty(retenuSourceRequest.getId().toString()) )
+		retenuSourceResponseError.setHaveError(false);
+		if(Utility.isEmpty(retenuSourceRequest.getId()) )
 		{
 			retenuSourceRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(retenuSourceRequest.get()) )
 		//{
-				//retenuSourceResponseError.setHave_error(true);
+				//retenuSourceResponseError.setHaveError(true);
 				//retenuSourceResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return retenuSourceResponseError;

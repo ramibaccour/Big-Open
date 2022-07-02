@@ -19,10 +19,9 @@ public class DocumentResponse
 	private double totalHt;
 	private double totalTva;
 	private double totalTtc;
-	private CollaborateurResponse collaborateurResponse;
-	private List<DetailDocumentResponse> listDetailDocumentResponse;
-	private List<ReglementResponse> listReglementResponse;
-	private List<ReglementResponse> listReglementAvoirResponse;
+	private CollaborateurResponse collaborateur;
+	private List<DetailDocumentResponse> listDetailDocument;
+	private List<ReglementResponse> listReglement;
 	public DocumentResponse(Integer id)
 	{
 		super();

@@ -15,7 +15,7 @@ public class BanqueRequest
 	private String nomLng2;
 	private String nomLng3;
 	private String rib;
-	private List<ReglementRequest> listReglementRequest;
+	private List<ReglementRequest> listReglement;
 	public BanqueRequest(Integer id)
 	{
 		super();

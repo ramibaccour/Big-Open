@@ -13,7 +13,7 @@ public class RetenuSourceResponse
 	private Integer id;
 	private Integer taux;
 	private String type;
-	private List<ReglementResponse> listReglementResponse;
+	private List<ReglementResponse> listReglement;
 	public RetenuSourceResponse(Integer id)
 	{
 		super();

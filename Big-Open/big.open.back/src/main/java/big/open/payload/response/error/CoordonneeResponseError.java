@@ -27,5 +27,5 @@ public class CoordonneeResponseError
 	private String email;
 	private String siteWeb;
 	private String typeObjet;
-	private boolean have_error;
+	private boolean haveError;
 }

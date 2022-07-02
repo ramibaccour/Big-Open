@@ -7,5 +7,5 @@ import big.open.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>
 {
-	public Optional<User> findByUsername(String userNane);
+	public Optional<User> findByUsernameAndIsDeleted(String username, Integer isDeleted);
 }

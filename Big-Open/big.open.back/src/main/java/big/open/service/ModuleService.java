@@ -36,12 +36,12 @@ public class ModuleService
 			ModuleResponse moduleResponse = ObjectMapperUtility.map(module.get(),ModuleResponse.class);
 			return new ModuleResponseFindById(moduleResponse);
 		}
-		return new ModuleResponseFindById("Non trouvé");
+		return new ModuleResponseFindById("");
 	}
 	public ModuleResponseSave save(ModuleRequest moduleRequest)
 	{
 		ModuleResponseError moduleResponseError = checkModuleResponseError(moduleRequest);
-		if(moduleResponseError.isHave_error())
+		if(moduleResponseError.isHaveError())
 		{
 			return new ModuleResponseSave(moduleResponseError);
 		}
@@ -54,7 +54,7 @@ public class ModuleService
 			}
 			catch(Exception e)
 			{
-				moduleResponseError.setHave_error(true);
+				moduleResponseError.setHaveError(true);
 				return  new ModuleResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class ModuleService
 	private ModuleResponseError checkModuleResponseError (ModuleRequest moduleRequest)
 	{
 		ModuleResponseError moduleResponseError = new ModuleResponseError();
-		moduleResponseError.setHave_error(false);
-		if(Utility.isEmpty(moduleRequest.getId().toString()) )
+		moduleResponseError.setHaveError(false);
+		if(Utility.isEmpty(moduleRequest.getId()) )
 		{
 			moduleRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(moduleRequest.get()) )
 		//{
-				//moduleResponseError.setHave_error(true);
+				//moduleResponseError.setHaveError(true);
 				//moduleResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return moduleResponseError;

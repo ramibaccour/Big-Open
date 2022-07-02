@@ -17,9 +17,12 @@ import javax.validation.constraints.NotNull;
 public class ArticleTax 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
-	@Transient	private Tax tax;
-	@Transient	private Article article;
+	@Transient
+	private Tax tax;
+	@Transient
+	private Article article;
 }

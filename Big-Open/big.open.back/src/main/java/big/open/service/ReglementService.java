@@ -36,12 +36,12 @@ public class ReglementService
 			ReglementResponse reglementResponse = ObjectMapperUtility.map(reglement.get(),ReglementResponse.class);
 			return new ReglementResponseFindById(reglementResponse);
 		}
-		return new ReglementResponseFindById("Non trouvé");
+		return new ReglementResponseFindById("");
 	}
 	public ReglementResponseSave save(ReglementRequest reglementRequest)
 	{
 		ReglementResponseError reglementResponseError = checkReglementResponseError(reglementRequest);
-		if(reglementResponseError.isHave_error())
+		if(reglementResponseError.isHaveError())
 		{
 			return new ReglementResponseSave(reglementResponseError);
 		}
@@ -54,7 +54,7 @@ public class ReglementService
 			}
 			catch(Exception e)
 			{
-				reglementResponseError.setHave_error(true);
+				reglementResponseError.setHaveError(true);
 				return  new ReglementResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class ReglementService
 	private ReglementResponseError checkReglementResponseError (ReglementRequest reglementRequest)
 	{
 		ReglementResponseError reglementResponseError = new ReglementResponseError();
-		reglementResponseError.setHave_error(false);
-		if(Utility.isEmpty(reglementRequest.getId().toString()) )
+		reglementResponseError.setHaveError(false);
+		if(Utility.isEmpty(reglementRequest.getId()) )
 		{
 			reglementRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(reglementRequest.get()) )
 		//{
-				//reglementResponseError.setHave_error(true);
+				//reglementResponseError.setHaveError(true);
 				//reglementResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return reglementResponseError;

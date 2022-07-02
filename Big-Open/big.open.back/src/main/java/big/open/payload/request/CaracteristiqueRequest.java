@@ -14,7 +14,7 @@ public class CaracteristiqueRequest
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private List<ValeurCarateristiqueRequest> listValeurCarateristiqueRequest;
+	private List<ValeurCarateristiqueRequest> listValeurCarateristique;
 	public CaracteristiqueRequest(Integer id)
 	{
 		super();

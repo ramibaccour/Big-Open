@@ -17,11 +17,14 @@ import javax.validation.constraints.NotNull;
 public class DetailGroupeModule 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="valeur")
 	private boolean valeur;
-	@Transient	private GroupeModule groupeModule;
-	@Transient	private Module module;
+	@Transient
+	private GroupeModule groupeModule;
+	@Transient
+	private Module module;
 }

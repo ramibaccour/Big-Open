@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 public class ArticleCategorieRequest
 {
 	private Integer id;
-	private CategorieRequest categorieRequest;
-	private ArticleRequest articleRequest;
+	private CategorieRequest categorie;
+	private ArticleRequest article;
 	public ArticleCategorieRequest(Integer id)
 	{
 		super();

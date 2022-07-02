@@ -12,7 +12,7 @@ public class ValeurCarateristiqueRequest
 {
 	private Integer id;
 	private String valeur;
-	private CaracteristiqueRequest caracteristiqueRequest;
+	private CaracteristiqueRequest caracteristique;
 	public ValeurCarateristiqueRequest(Integer id)
 	{
 		super();

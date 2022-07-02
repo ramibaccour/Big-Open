@@ -14,8 +14,8 @@ public class GroupeModuleRequest
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private List<DetailGroupeModuleRequest> listDetailGroupeModuleRequest;
-	private List<UserRequest> listUserRequest;
+	private List<DetailGroupeModuleRequest> listDetailGroupeModule;
+	private List<UserRequest> listUser;
 	public GroupeModuleRequest(Integer id)
 	{
 		super();

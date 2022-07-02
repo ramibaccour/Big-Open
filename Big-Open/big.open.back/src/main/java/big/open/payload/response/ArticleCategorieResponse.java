@@ -11,8 +11,8 @@ import org.springframework.data.geo.Point;
 public class ArticleCategorieResponse
 {
 	private Integer id;
-	private CategorieResponse categorieResponse;
-	private ArticleResponse articleResponse;
+	private CategorieResponse categorie;
+	private ArticleResponse article;
 	public ArticleCategorieResponse(Integer id)
 	{
 		super();

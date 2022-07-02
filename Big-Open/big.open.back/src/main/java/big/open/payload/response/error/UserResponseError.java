@@ -11,5 +11,12 @@ public class UserResponseError
 	private String username;
 	private String password;
 	private String isDeleted;
-	private boolean have_error;
+	private String Lng;
+	private String message;
+	private boolean haveError;
+	public UserResponseError(String message)
+	{
+		super();
+		this.message = message;
+	}
 }

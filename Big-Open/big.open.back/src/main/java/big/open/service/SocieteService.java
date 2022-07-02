@@ -36,12 +36,12 @@ public class SocieteService
 			SocieteResponse societeResponse = ObjectMapperUtility.map(societe.get(),SocieteResponse.class);
 			return new SocieteResponseFindById(societeResponse);
 		}
-		return new SocieteResponseFindById("Non trouvé");
+		return new SocieteResponseFindById("");
 	}
 	public SocieteResponseSave save(SocieteRequest societeRequest)
 	{
 		SocieteResponseError societeResponseError = checkSocieteResponseError(societeRequest);
-		if(societeResponseError.isHave_error())
+		if(societeResponseError.isHaveError())
 		{
 			return new SocieteResponseSave(societeResponseError);
 		}
@@ -54,7 +54,7 @@ public class SocieteService
 			}
 			catch(Exception e)
 			{
-				societeResponseError.setHave_error(true);
+				societeResponseError.setHaveError(true);
 				return  new SocieteResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class SocieteService
 	private SocieteResponseError checkSocieteResponseError (SocieteRequest societeRequest)
 	{
 		SocieteResponseError societeResponseError = new SocieteResponseError();
-		societeResponseError.setHave_error(false);
-		if(Utility.isEmpty(societeRequest.getId().toString()) )
+		societeResponseError.setHaveError(false);
+		if(Utility.isEmpty(societeRequest.getId()) )
 		{
 			societeRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(societeRequest.get()) )
 		//{
-				//societeResponseError.setHave_error(true);
+				//societeResponseError.setHaveError(true);
 				//societeResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return societeResponseError;

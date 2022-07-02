@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/groupe_module")
+@RequestMapping("/api/groupeModule")
 public class GroupeModuleController 
 {
 	@Autowired

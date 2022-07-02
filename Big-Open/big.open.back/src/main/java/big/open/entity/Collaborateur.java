@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Collaborateur 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="raison_sociale")

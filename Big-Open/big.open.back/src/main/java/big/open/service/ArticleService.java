@@ -36,12 +36,12 @@ public class ArticleService
 			ArticleResponse articleResponse = ObjectMapperUtility.map(article.get(),ArticleResponse.class);
 			return new ArticleResponseFindById(articleResponse);
 		}
-		return new ArticleResponseFindById("Non trouvé");
+		return new ArticleResponseFindById("");
 	}
 	public ArticleResponseSave save(ArticleRequest articleRequest)
 	{
 		ArticleResponseError articleResponseError = checkArticleResponseError(articleRequest);
-		if(articleResponseError.isHave_error())
+		if(articleResponseError.isHaveError())
 		{
 			return new ArticleResponseSave(articleResponseError);
 		}
@@ -54,7 +54,7 @@ public class ArticleService
 			}
 			catch(Exception e)
 			{
-				articleResponseError.setHave_error(true);
+				articleResponseError.setHaveError(true);
 				return  new ArticleResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -79,14 +79,14 @@ public class ArticleService
 	private ArticleResponseError checkArticleResponseError (ArticleRequest articleRequest)
 	{
 		ArticleResponseError articleResponseError = new ArticleResponseError();
-		articleResponseError.setHave_error(false);
-		if(Utility.isEmpty(articleRequest.getId().toString()) )
+		articleResponseError.setHaveError(false);
+		if(Utility.isEmpty(articleRequest.getId()) )
 		{
 			articleRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(articleRequest.get()) )
 		//{
-				//articleResponseError.setHave_error(true);
+				//articleResponseError.setHaveError(true);
 				//articleResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return articleResponseError;

@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/detail_document_tax")
+@RequestMapping("/api/detailDocumentTax")
 public class DetailDocumentTaxController 
 {
 	@Autowired

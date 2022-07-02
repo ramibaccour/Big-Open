@@ -12,7 +12,7 @@ public class TvaRequest
 {
 	private Integer id;
 	private Integer taux;
-	private List<ArticleRequest> listArticleRequest;
+	private List<ArticleRequest> listArticle;
 	public TvaRequest(Integer id)
 	{
 		super();

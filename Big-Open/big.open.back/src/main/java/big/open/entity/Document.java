@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class Document 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="numero")
@@ -36,11 +37,10 @@ public class Document
 	private double totalTva;
 	@Column(name="total_ttc")
 	private double totalTtc;
-	@Transient	private Collaborateur collaborateur;
+	@Transient
+	private Collaborateur collaborateur;
 	@Transient
 	private List<DetailDocument> listDetailDocument;
 	@Transient
 	private List<Reglement> listReglement;
-	@Transient
-	private List<Reglement> listReglementAvoir;
 }

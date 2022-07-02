@@ -12,5 +12,5 @@ public class CaisseResponseError
 	private String nomLng2;
 	private String nomLng3;
 	private String valeur;
-	private boolean have_error;
+	private boolean haveError;
 }

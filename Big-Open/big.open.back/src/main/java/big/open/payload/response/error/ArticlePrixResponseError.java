@@ -10,5 +10,5 @@ public class ArticlePrixResponseError
 	private String id;
 	private String prix;
 	private String ttcHt;
-	private boolean have_error;
+	private boolean haveError;
 }

@@ -13,7 +13,7 @@ public class ArticlePrixResponse
 	private Integer id;
 	private double prix;
 	private boolean ttcHt;
-	private ArticleResponse articleResponse;
+	private ArticleResponse article;
 	public ArticlePrixResponse(Integer id)
 	{
 		super();

@@ -16,11 +16,11 @@ public class ImageRequest
 	private String resolution;
 	private String type;
 	private String typeObjet;
-	private ArticleRequest articleRequest;
-	private CategorieRequest categorieRequest;
-	private CollaborateurRequest collaborateurRequest;
-	private SocieteRequest societeRequest;
-	private List<MonnaieRequest> listMonnaieRequest;
+	private ArticleRequest article;
+	private CategorieRequest categorie;
+	private CollaborateurRequest collaborateur;
+	private SocieteRequest societe;
+	private List<MonnaieRequest> listMonnaie;
 	public ImageRequest(Integer id)
 	{
 		super();

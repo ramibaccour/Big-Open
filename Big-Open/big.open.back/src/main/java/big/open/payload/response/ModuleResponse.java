@@ -14,9 +14,9 @@ public class ModuleResponse
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private ModuleResponse moduleResponse;
-	private List<DetailGroupeModuleResponse> listDetailGroupeModuleResponse;
-	private List<ModuleResponse> listModuleResponse;
+	private ModuleResponse module;
+	private List<DetailGroupeModuleResponse> listDetailGroupeModule;
+	private List<ModuleResponse> listModule;
 	public ModuleResponse(Integer id)
 	{
 		super();

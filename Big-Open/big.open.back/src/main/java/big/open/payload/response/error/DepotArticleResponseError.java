@@ -11,5 +11,5 @@ public class DepotArticleResponseError
 	private String quantite;
 	private String quantiteMin;
 	private String alertQuantiteMin;
-	private boolean have_error;
+	private boolean haveError;
 }

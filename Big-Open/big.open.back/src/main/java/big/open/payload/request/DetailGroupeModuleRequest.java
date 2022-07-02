@@ -12,8 +12,8 @@ public class DetailGroupeModuleRequest
 {
 	private Integer id;
 	private boolean valeur;
-	private GroupeModuleRequest groupeModuleRequest;
-	private ModuleRequest moduleRequest;
+	private GroupeModuleRequest groupeModule;
+	private ModuleRequest module;
 	public DetailGroupeModuleRequest(Integer id)
 	{
 		super();

@@ -17,12 +17,14 @@ import javax.validation.constraints.NotNull;
 public class ArticlePrix 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="prix")
 	private double prix;
 	@Column(name="ttc_ht")
 	private boolean ttcHt;
-	@Transient	private Article article;
+	@Transient
+	private Article article;
 }

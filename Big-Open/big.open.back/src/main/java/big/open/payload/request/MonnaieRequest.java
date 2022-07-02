@@ -14,7 +14,7 @@ public class MonnaieRequest
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
-	private ImageRequest imageRequest;
+	private ImageRequest image;
 	public MonnaieRequest(Integer id)
 	{
 		super();

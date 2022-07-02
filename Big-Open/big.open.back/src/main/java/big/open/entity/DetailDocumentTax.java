@@ -17,7 +17,8 @@ import javax.validation.constraints.NotNull;
 public class DetailDocumentTax 
 {
 	@NotNull()
-	@Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
 	@Column(name="nom_lng1")
@@ -34,5 +35,6 @@ public class DetailDocumentTax
 	private double valeur;
 	@Column(name="calculer_avant_tva")
 	private boolean calculerAvantTva;
-	@Transient	private Tax tax;
+	@Transient
+	private Tax tax;
 }

@@ -9,5 +9,5 @@ public class ValeurCarateristiqueResponseError
 {
 	private String id;
 	private String valeur;
-	private boolean have_error;
+	private boolean haveError;
 }

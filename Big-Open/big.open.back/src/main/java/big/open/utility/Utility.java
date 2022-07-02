@@ -59,6 +59,10 @@ public class Utility
 	{
 		return (str == null || str.isEmpty() || str == "" );
 	}
+	public static boolean isEmpty(Integer str)
+	{
+		return (str == null );
+	}
 	public static LocalDateTime convert(String source,int h,int m,int s) 
 	{
 	    // parse to LocalDateTime 

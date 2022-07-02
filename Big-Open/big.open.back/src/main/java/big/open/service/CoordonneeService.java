@@ -36,12 +36,12 @@ public class CoordonneeService
 			CoordonneeResponse coordonneeResponse = ObjectMapperUtility.map(coordonnee.get(),CoordonneeResponse.class);
 			return new CoordonneeResponseFindById(coordonneeResponse);
 		}
-		return new CoordonneeResponseFindById("Non trouvé");
+		return new CoordonneeResponseFindById("");
 	}
 	public CoordonneeResponseSave save(CoordonneeRequest coordonneeRequest)
 	{
 		CoordonneeResponseError coordonneeResponseError = checkCoordonneeResponseError(coordonneeRequest);
-		if(coordonneeResponseError.isHave_error())
+		if(coordonneeResponseError.isHaveError())
 		{
 			return new CoordonneeResponseSave(coordonneeResponseError);
 		}
@@ -54,7 +54,7 @@ public class CoordonneeService
 			}
 			catch(Exception e)
 			{
-				coordonneeResponseError.setHave_error(true);
+				coordonneeResponseError.setHaveError(true);
 				return  new CoordonneeResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class CoordonneeService
 	private CoordonneeResponseError checkCoordonneeResponseError (CoordonneeRequest coordonneeRequest)
 	{
 		CoordonneeResponseError coordonneeResponseError = new CoordonneeResponseError();
-		coordonneeResponseError.setHave_error(false);
-		if(Utility.isEmpty(coordonneeRequest.getId().toString()) )
+		coordonneeResponseError.setHaveError(false);
+		if(Utility.isEmpty(coordonneeRequest.getId()) )
 		{
 			coordonneeRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(coordonneeRequest.get()) )
 		//{
-				//coordonneeResponseError.setHave_error(true);
+				//coordonneeResponseError.setHaveError(true);
 				//coordonneeResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return coordonneeResponseError;

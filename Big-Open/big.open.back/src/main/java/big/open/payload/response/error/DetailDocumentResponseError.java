@@ -15,5 +15,5 @@ public class DetailDocumentResponseError
 	private String articlePrix;
 	private String tauxTva;
 	private String totalHt;
-	private boolean have_error;
+	private boolean haveError;
 }

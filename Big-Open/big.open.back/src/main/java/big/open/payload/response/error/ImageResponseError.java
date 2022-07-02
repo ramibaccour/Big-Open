@@ -13,5 +13,5 @@ public class ImageResponseError
 	private String resolution;
 	private String type;
 	private String typeObjet;
-	private boolean have_error;
+	private boolean haveError;
 }

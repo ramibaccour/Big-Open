@@ -15,7 +15,7 @@ public class CaisseRequest
 	private String nomLng2;
 	private String nomLng3;
 	private double valeur;
-	private List<ReglementRequest> listReglementRequest;
+	private List<ReglementRequest> listReglement;
 	public CaisseRequest(Integer id)
 	{
 		super();

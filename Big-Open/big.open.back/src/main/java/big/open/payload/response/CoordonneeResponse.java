@@ -30,9 +30,9 @@ public class CoordonneeResponse
 	private String email;
 	private String siteWeb;
 	private String typeObjet;
-	private CollaborateurResponse collaborateurResponse;
-	private SocieteResponse societeResponse;
-	private List<DepotResponse> listDepotResponse;
+	private CollaborateurResponse collaborateur;
+	private SocieteResponse societe;
+	private List<DepotResponse> listDepot;
 	public CoordonneeResponse(Integer id)
 	{
 		super();

@@ -36,12 +36,12 @@ public class TvaService
 			TvaResponse tvaResponse = ObjectMapperUtility.map(tva.get(),TvaResponse.class);
 			return new TvaResponseFindById(tvaResponse);
 		}
-		return new TvaResponseFindById("Non trouvé");
+		return new TvaResponseFindById("");
 	}
 	public TvaResponseSave save(TvaRequest tvaRequest)
 	{
 		TvaResponseError tvaResponseError = checkTvaResponseError(tvaRequest);
-		if(tvaResponseError.isHave_error())
+		if(tvaResponseError.isHaveError())
 		{
 			return new TvaResponseSave(tvaResponseError);
 		}
@@ -54,7 +54,7 @@ public class TvaService
 			}
 			catch(Exception e)
 			{
-				tvaResponseError.setHave_error(true);
+				tvaResponseError.setHaveError(true);
 				return  new TvaResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class TvaService
 	private TvaResponseError checkTvaResponseError (TvaRequest tvaRequest)
 	{
 		TvaResponseError tvaResponseError = new TvaResponseError();
-		tvaResponseError.setHave_error(false);
-		if(Utility.isEmpty(tvaRequest.getId().toString()) )
+		tvaResponseError.setHaveError(false);
+		if(Utility.isEmpty(tvaRequest.getId()) )
 		{
 			tvaRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(tvaRequest.get()) )
 		//{
-				//tvaResponseError.setHave_error(true);
+				//tvaResponseError.setHaveError(true);
 				//tvaResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return tvaResponseError;

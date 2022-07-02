@@ -12,7 +12,7 @@ public class TvaResponse
 {
 	private Integer id;
 	private Integer taux;
-	private List<ArticleResponse> listArticleResponse;
+	private List<ArticleResponse> listArticle;
 	public TvaResponse(Integer id)
 	{
 		super();

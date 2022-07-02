@@ -36,12 +36,12 @@ public class BanqueService
 			BanqueResponse banqueResponse = ObjectMapperUtility.map(banque.get(),BanqueResponse.class);
 			return new BanqueResponseFindById(banqueResponse);
 		}
-		return new BanqueResponseFindById("Non trouvé");
+		return new BanqueResponseFindById("");
 	}
 	public BanqueResponseSave save(BanqueRequest banqueRequest)
 	{
 		BanqueResponseError banqueResponseError = checkBanqueResponseError(banqueRequest);
-		if(banqueResponseError.isHave_error())
+		if(banqueResponseError.isHaveError())
 		{
 			return new BanqueResponseSave(banqueResponseError);
 		}
@@ -54,7 +54,7 @@ public class BanqueService
 			}
 			catch(Exception e)
 			{
-				banqueResponseError.setHave_error(true);
+				banqueResponseError.setHaveError(true);
 				return  new BanqueResponseSave("Erreur d'enregistrement");
 			}
 		}
@@ -75,14 +75,14 @@ public class BanqueService
 	private BanqueResponseError checkBanqueResponseError (BanqueRequest banqueRequest)
 	{
 		BanqueResponseError banqueResponseError = new BanqueResponseError();
-		banqueResponseError.setHave_error(false);
-		if(Utility.isEmpty(banqueRequest.getId().toString()) )
+		banqueResponseError.setHaveError(false);
+		if(Utility.isEmpty(banqueRequest.getId()) )
 		{
 			banqueRequest.setId(-1);
 		}
 		//if(Utility.isEmpty(banqueRequest.get()) )
 		//{
-				//banqueResponseError.setHave_error(true);
+				//banqueResponseError.setHaveError(true);
 				//banqueResponseError.set("Le nom d'utilisateur est obligatoire");
 		//}
 		return banqueResponseError;
