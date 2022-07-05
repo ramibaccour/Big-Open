@@ -13,6 +13,7 @@ public class LngRequest
 	private Integer id;
 	private String name;
 	private boolean rtl;
+	private boolean byDefault;
 	private List<UserRequest> listUser;
 	public LngRequest(Integer id)
 	{

@@ -23,6 +23,7 @@ public class Lng
 	private String name;
 	@Column(name="rtl")
 	private boolean rtl;
-	@Transient
+	@Column(name="by_default")
+	private boolean byDefault;
 	private List<User> listUser;
 }

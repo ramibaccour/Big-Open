@@ -5,10 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';   
-//------------------------begin material----------------------
+//------------------------Begin material----------------------
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
@@ -33,6 +33,11 @@ import { MenuComponent } from './shared/layout/menu/menu.component';
 import { TableComponent } from './shared/utility/table/table.component';
 import { DialogComponent } from './shared/utility/dialog/dialog.component';
 import { LoginComponent } from './shared/login/login.component';
+
+//------------------------Begin Translate----------------------
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+//------------------------End Translate----------------------
 
 @NgModule({
   declarations: [
@@ -72,10 +77,20 @@ import { LoginComponent } from './shared/login/login.component';
   MatFormFieldModule,
   MomentDateModule,
   MatPaginatorModule,
-  MatExpansionModule
+  MatExpansionModule,
   //------------------------End material----------------------
-  
+  //------------------------Begin Translate----------------------
+  TranslateModule.forRoot(
+  {
+    loader: 
+    {
+      provide: TranslateLoader,
+      useFactory: httpTranslateLoader,
+      deps: [HttpClient]
+    }
+  })
   ],
+  //------------------------End Translate----------------------
   providers: 
   [
     // {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
@@ -92,3 +107,7 @@ import { LoginComponent } from './shared/login/login.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function httpTranslateLoader(http: HttpClient) 
+{
+  return new TranslateHttpLoader(http);
+}

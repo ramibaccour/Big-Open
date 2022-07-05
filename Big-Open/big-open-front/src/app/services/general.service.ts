@@ -6,13 +6,18 @@ import { of } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
 // declare var ol;
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralService 
 {
-  constructor(private sanitized: DomSanitizer, public router: Router, private http: HttpClient,public route: ActivatedRoute, private _snackBar: MatSnackBar,public dialog: MatDialog) { }
+  constructor(private sanitized: DomSanitizer, public router: Router, private http: HttpClient,public route: ActivatedRoute, private _snackBar: MatSnackBar,public dialog: MatDialog, public translate: TranslateService) 
+  {
+    translate.addLangs(['fr', 'ne']);
+    translate.setDefaultLang('fr');
+  }
   url = "http://localhost:8080/";
   api = "api/";
   urlFindAllLng = "lng/findAll"
@@ -214,5 +219,8 @@ export class GeneralService
     }          
     return [0,0];
   }
-
+  switchLang(lang: string) 
+  {
+    this.translate.use(lang);
+  }
 }
