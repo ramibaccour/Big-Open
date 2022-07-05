@@ -9,31 +9,31 @@
                 </div>
                 <br>
                 <div class="text-center">
-                    <h1>Connexion</h1>
-                    <p>Bonjour! Connectez-vous avec votre email.</p>
+                    <h1>{{'Connexion' | translate }}</h1>
+                    <p>{{'Bonjour' | translate }}</p>
                 </div>
             </div>
 
             <div>
                 <mat-form-field class="input-login" appearance="outline">
-                    <mat-label>Adresse e-mail</mat-label>
+                    <mat-label>{{'Adresse' | translate }}</mat-label>
                     <input matInput type="text" name="username" [(ngModel)]="user.username" >
                     <mat-hint *ngIf="userResponse && userResponse.username" class="error">{{userResponse.username}}</mat-hint>
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field class="input-login" appearance="outline">
-                    <mat-label>Mot de passe</mat-label>
+                    <mat-label>{{'Password' | translate }}</mat-label>
                     <input matInput type="text" name="password" [(ngModel)]="user.password" >
                     <mat-hint *ngIf="userResponse && userResponse.password" class="error">{{userResponse.password}}</mat-hint>
                 </mat-form-field>
             </div>
             <div class="flex-space-between">
-                <mat-checkbox [(ngModel)]="resterConnecter"><b> Rester connecté</b></mat-checkbox>
-                <span class="cursor-pointer">Mot de passe oublié?</span>
+                <mat-checkbox [(ngModel)]="resterConnecter"><b>{{'Remember' | translate }}</b></mat-checkbox>
+                <span class="cursor-pointer">{{'ForgotPassword' | translate }}</span>
             </div>
             <br>  
-            <button mat-raised-button color="primary" class="btn-connection">Connexion</button>
+            <button mat-raised-button color="primary" class="btn-connection">{{'Connexion' | translate }}</button>
             
         </div>         
        

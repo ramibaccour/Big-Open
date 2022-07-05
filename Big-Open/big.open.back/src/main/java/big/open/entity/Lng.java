@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
 import java.util.List;
 import lombok.Data;
 import javax.validation.constraints.NotNull;
@@ -25,5 +26,8 @@ public class Lng
 	private boolean rtl;
 	@Column(name="by_default")
 	private boolean byDefault;
+	@Column(name="code")
+	private String code;
+	@Transient
 	private List<User> listUser;
 }

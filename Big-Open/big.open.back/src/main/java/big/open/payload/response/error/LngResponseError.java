@@ -11,5 +11,6 @@ public class LngResponseError
 	private String name;
 	private boolean rtl;
 	private boolean byDefault;
+	private String code;
 	private boolean haveError;
 }

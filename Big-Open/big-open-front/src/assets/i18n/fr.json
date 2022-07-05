@@ -1,3 +1,10 @@
 {
-    "Sitetitle" : "fr"
+    "-----------------------------login":"---------------------------",
+    "Connexion" : "Connexion",
+    "Bonjour" : "Bonjour! Connectez-vous avec votre email.",
+    "Adresse" : "Adresse e-mail",
+    "Password" : "Mot de passe",
+    "Remember" : "Rester connecté",
+    "ForgotPassword" : "Mot de passe oublié?",
+    "---------------------------fin-login":"--------------------------"
 }

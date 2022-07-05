@@ -7,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.util.List;
-import org.springframework.data.geo.Point;
-import java.time.LocalDateTime;
 import lombok.Data;
 import javax.validation.constraints.NotNull;
 @Data

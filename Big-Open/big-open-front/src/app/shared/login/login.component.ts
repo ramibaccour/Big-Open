@@ -27,11 +27,21 @@ export class LoginComponent implements OnInit
       {
         this.generalService.showSpinner = false;
         this.listLng = listLng.listLngResponse;
+        this.setTranslate();
       }
       this.generalService.httpGet(this.generalService.urlFindAllLng,fn, this.generalService.erreur )
-    },50)
+    },50);
     
   }
+  setTranslate()
+  {
+    var listLng = this.listLng.map(lng => {return lng.code})
+    this.generalService.translate.addLangs(listLng);
+    var defaulLng = this.listLng.find(lng => {return lng.byDefault == 1});
+    if(defaulLng)
+      this.generalService.translate.setDefaultLang(defaulLng.code);
+  }
+    
   init()
   {
     this.user = {}
@@ -39,6 +49,7 @@ export class LoginComponent implements OnInit
   }
   setLng(lng)
   {
-
+    this.generalService.switchLang(lng.code)
   }
 }
+

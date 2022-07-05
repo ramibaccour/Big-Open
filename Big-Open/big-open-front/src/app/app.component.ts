@@ -16,7 +16,6 @@ export class AppComponent implements OnInit
     if(userString && userString.length>0)
     {
       this.generalService.user = JSON.parse(userString);
-    }
-    this.generalService.switchLang("en")
+    }    
   }
 }
