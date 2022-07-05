@@ -25,6 +25,9 @@ DROP TABLE IF EXISTS `lng`;
 CREATE TABLE `lng` (
   `id` int NOT NULL,
   `name` varchar(45) DEFAULT NULL,
+  `rtl` tinyint(1) DEFAULT NULL,
+  `by_default` tinyint(1) DEFAULT NULL,
+  `code` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -35,7 +38,7 @@ CREATE TABLE `lng` (
 
 LOCK TABLES `lng` WRITE;
 /*!40000 ALTER TABLE `lng` DISABLE KEYS */;
-INSERT INTO `lng` VALUES (1,'Française'),(2,'English');
+INSERT INTO `lng` VALUES (1,'Française',0,1,'fr'),(2,'English',0,0,'en');
 /*!40000 ALTER TABLE `lng` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-02 16:39:45
+-- Dump completed on 2022-07-05  8:15:24
