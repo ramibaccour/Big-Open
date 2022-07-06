@@ -24,7 +24,10 @@
             <div>
                 <mat-form-field class="input-login" appearance="outline">
                     <mat-label>{{'Password' | translate }}</mat-label>
-                    <input matInput type="text" name="password" [(ngModel)]="user.password" >
+                    <input matInput [type]="typeInput" name="password" [(ngModel)]="user.password" >
+                    <button matSuffix mat-icon-button (click)="showPassword()">
+                        <mat-icon>{{iconPassword}}</mat-icon>
+                    </button>
                     <mat-hint *ngIf="userResponse && userResponse.password" class="error">{{userResponse.password}}</mat-hint>
                 </mat-form-field>
             </div>
@@ -33,7 +36,7 @@
                 <span class="cursor-pointer">{{'ForgotPassword' | translate }}</span>
             </div>
             <br>  
-            <button mat-raised-button color="primary" class="btn-connection">{{'Connexion' | translate }}</button>
+            <button (click)="connection()" mat-raised-button class="btn-connection">{{'Connexion' | translate }}</button>
             
         </div>         
        

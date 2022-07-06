@@ -13,13 +13,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class GeneralService 
 {
-  constructor(private sanitized: DomSanitizer, public router: Router, private http: HttpClient,public route: ActivatedRoute, private _snackBar: MatSnackBar,public dialog: MatDialog, public translate: TranslateService) 
-  {
-    
-  }
+  constructor(private sanitized: DomSanitizer, public router: Router, private http: HttpClient,public route: ActivatedRoute, private _snackBar: MatSnackBar,public dialog: MatDialog, public translate: TranslateService){}
   url = "http://localhost:8080/";
   api = "api/";
-  urlFindAllLng = "lng/findAll"
+  urlFindAllLng = "lng/findAll";
+  urlSignin = "user/signin";
   headers;
   user
   showSpinner;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GeneralService } from 'src/app/services/general.service';
 @Component({
   selector: 'app-login',
@@ -11,7 +12,9 @@ export class LoginComponent implements OnInit
   userResponse;
   resterConnecter = false;
   listLng;
-  constructor(private generalService : GeneralService) { }
+  typeInput = "password";
+  iconPassword = "visibility";
+  constructor(private generalService : GeneralService, private router: Router) { }
 
   ngOnInit(): void 
   {
@@ -50,6 +53,33 @@ export class LoginComponent implements OnInit
   setLng(lng)
   {
     this.generalService.switchLang(lng.code)
+  }
+  showPassword()
+  {
+    if(this.typeInput == "password")
+    {
+      this.typeInput = "text";
+      this.iconPassword = "visibility_off" ;
+    }      
+    else
+    {
+      this.typeInput = "password";
+      this.iconPassword = "visibility" ;
+
+    }
+  }
+  connection()
+  {
+    this.generalService.showSpinner = true;
+    var fn = (user)=>
+    {
+      this.generalService.showSpinner = false;
+      if(user.responseError == null && user.jwt)
+      {
+        this.router.navigate(["/accueille"])
+      }
+    }
+    this.generalService.httpPost(this.user, this.generalService.urlSignin,fn, this.generalService.erreur )
   }
 }
 

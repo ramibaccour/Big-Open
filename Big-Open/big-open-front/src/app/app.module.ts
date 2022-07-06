@@ -37,6 +37,7 @@ import { LoginComponent } from './shared/login/login.component';
 //------------------------Begin Translate----------------------
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AccueilleComponent } from './components/accueille/accueille.component';
 //------------------------End Translate----------------------
 
 @NgModule({
@@ -48,6 +49,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     TableComponent,
     DialogComponent,
     LoginComponent,
+    AccueilleComponent,
    
   ],
   imports: 
