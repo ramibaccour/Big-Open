@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class CollaborateurRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private String raisonSociale;
 	private String matriculeFiscal;

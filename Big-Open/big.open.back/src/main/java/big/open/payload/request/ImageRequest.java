@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class ImageRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private String nom;
 	private String extentionImage;

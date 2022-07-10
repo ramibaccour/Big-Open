@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class CoordonneeRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private String adresseLn1;
 	private String adresseLn2;

@@ -7,7 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.List;
+import org.springframework.data.geo.Point;
+import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -29,9 +32,10 @@ public class GroupeModule
 	@Column(name="nom_lng2")
 	private String nomLng2;
 	@Column(name="nom_lng3")
-	private String nomLng3;
-
+	private String nomLng3;	
 	@OneToMany()
 	@JoinColumn(name = "id_groupe_module")
 	private List<DetailGroupeModule> listDetailGroupeModule;
+	@Transient
+	private List<User> listUser;
 }

@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class ArticleTaxRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private TaxRequest tax;
 	private ArticleRequest article;

@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class LngRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private String name;
 	private boolean rtl;

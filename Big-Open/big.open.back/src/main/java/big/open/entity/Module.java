@@ -9,6 +9,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.util.List;
+import org.springframework.data.geo.Point;
+import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -31,11 +33,9 @@ public class Module
 	private String nomLng2;
 	@Column(name="nom_lng3")
 	private String nomLng3;
-	
 	@OneToOne()
 	@JoinColumn(name = "id_menu")
 	private Menu menu;
-	
 	@Transient
 	private Module module;
 	@Transient

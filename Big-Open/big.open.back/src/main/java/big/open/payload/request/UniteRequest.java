@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class UniteRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private String nomLng1;
 	private String nomLng2;

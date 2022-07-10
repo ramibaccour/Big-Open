@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class DetailDocumentRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private String nomArticle;
 	private String referenceInterne;

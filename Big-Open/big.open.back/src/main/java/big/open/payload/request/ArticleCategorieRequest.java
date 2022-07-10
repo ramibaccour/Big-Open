@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class ArticleCategorieRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private CategorieRequest categorie;
 	private ArticleRequest article;

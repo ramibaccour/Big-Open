@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class ReglementRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private double montant;
 	private String rib;

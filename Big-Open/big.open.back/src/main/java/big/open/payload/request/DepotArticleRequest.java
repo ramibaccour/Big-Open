@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class DepotArticleRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private double quantite;
 	private double quantiteMin;

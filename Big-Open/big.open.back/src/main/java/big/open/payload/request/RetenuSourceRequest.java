@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class RetenuSourceRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private Integer taux;
 	private String type;

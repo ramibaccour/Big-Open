@@ -7,16 +7,18 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import lombok.AllArgsConstructor;
+import javax.persistence.Transient;
+import java.util.List;
+import org.springframework.data.geo.Point;
+import java.time.LocalDateTime;
 import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
 import javax.validation.constraints.NotNull;
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Table(name = "user")
 public class User 
 {
@@ -31,7 +33,6 @@ public class User
 	private String password;
 	@Column(name="is_deleted")
 	private Integer isDeleted;
-	
 	@ManyToOne()
 	@JoinColumn(name = "id_lng")
 	private Lng lng;

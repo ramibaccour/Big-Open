@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class DocumentRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private String numero;
 	private LocalDateTime date;

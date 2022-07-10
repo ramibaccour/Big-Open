@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class DetailGroupeModuleRequest
 {
+	private Integer page;
+	private Integer size;
 	private Integer id;
 	private boolean valeur;
 	private GroupeModuleRequest groupeModule;
