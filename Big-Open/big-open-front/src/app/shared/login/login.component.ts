@@ -76,6 +76,9 @@ export class LoginComponent implements OnInit
       this.generalService.showSpinner = false;
       if(user.responseError == null && user.jwt)
       {
+        this.generalService.user = user;
+        if(this.resterConnecter)
+          localStorage.setItem("user",JSON.stringify(user));   
         this.router.navigate(["/accueille"])
       }
     }

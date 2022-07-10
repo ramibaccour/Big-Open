@@ -17,16 +17,38 @@ import javax.validation.constraints.NotNull;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "article_tax")
-public class ArticleTax 
+@Table(name = "menu")
+public class Menu 
 {
 	@NotNull()
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
+	@Column(name="nom_lng1")
+	private String nomLng1;
+	@Column(name="nom_lng2")
+	private String nomLng2;
+	@Column(name="nom_lng3")
+	private String nomLng3;
+	@Column(name="icon")
+	private String icon;
+	@Column(name="componont")
+	private String componont;
+	@Column(name="routerlink")
+	private String routerlink;
+	@Column(name="selected")
+	private boolean selected;
+	@Column(name="selected_color")
+	private String selectedColor;
+	@Column(name="color")
+	private String color;
+	@Column(name="order")
+	private Integer order;
 	@Transient
-	private Tax tax;
+	private Menu menu;
 	@Transient
-	private Article article;
+	private List<Menu> listMenu;
+	@Transient
+	private List<Module> listModule;
 }

@@ -220,4 +220,24 @@ export class GeneralService
   {
     this.translate.use(lang);
   }
+  makeTree(nodes, parentId) 
+  { 
+      return nodes
+        .filter((node) => node.idParent === parentId)
+        .reduce(
+          (tree, node) => 
+          [
+            ...tree,
+            this.makeTree(nodes, node.id).length>0?
+            {
+              ...node,
+              items: this.makeTree(nodes, node.id)
+            }:
+            {
+              ...node,
+            },
+          ],
+          [],
+        )
+  }
 }

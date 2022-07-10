@@ -7,14 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
-import java.util.List;
-import org.springframework.data.geo.Point;
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.validation.constraints.NotNull;
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "user")
 public class User 
@@ -35,6 +36,7 @@ public class User
 	@JoinColumn(name = "id_lng")
 	private Lng lng;
 
-	@Transient
+	@ManyToOne()
+	@JoinColumn(name = "id_groupe_module")
 	private GroupeModule groupeModule;
 }

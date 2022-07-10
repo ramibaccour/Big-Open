@@ -13,26 +13,26 @@ export class RouteGuardService implements CanActivate
     var userString  = localStorage.getItem("user");
     var user;
     if(userString && userString.length>0)
-    {
       user = JSON.parse(userString);
-      var url = this.generalService.getResolvedUrl(route);
-      var myMeny = user.userResponse.role.menus.find(menu => 
-      {
-        return menu.routerLink.find(routerLink => 
-        {
-          return url.indexOf(routerLink)>=0
-        })
-      })
-      if(user.jwt && user.jwt.length>0 && !this.generalService.tokenExpired(user.jwt) && myMeny)
-        return true;
-      else
-      {
-        return this.generalService.router.navigate(["login"]);
-      }
+    else if(this.generalService.user)
+      user = this.generalService.user
+    else
+      return this.generalService.router.navigate(["login"]);
+    var url = this.generalService.getResolvedUrl(route);
+    var myMeny = user.groupeModule.listDetailGroupeModule.find(groupeModule =>{return  groupeModule.module.menu.routerlink == url})
+    // user.userResponse.role.menus.find(menu => 
+    // {
+    //   return menu.routerLink.find(routerLink => 
+    //   {
+    //     return url.indexOf(routerLink)>=0
+    //   })
+    // })
+    if(user.jwt && user.jwt.length>0 && !this.generalService.tokenExpired(user.jwt) && myMeny)
+      return true;
+    else
+    {
+      return this.generalService.router.navigate(["login"]);
     }
-    if(this.generalService.user)
-        return true;
-    return this.generalService.router.navigate(["login"]);
   }
 
 }

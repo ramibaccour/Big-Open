@@ -9,8 +9,8 @@ public class LngResponseError
 {
 	private String id;
 	private String name;
-	private boolean rtl;
-	private boolean byDefault;
+	private String rtl;
+	private String byDefault;
 	private String code;
 	private boolean haveError;
 }

@@ -8,17 +8,23 @@ import org.springframework.data.geo.Point;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ModuleResponse
+public class MenuResponse
 {
 	private Integer id;
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
+	private String icon;
+	private String componont;
+	private String routerlink;
+	private boolean selected;
+	private String selectedColor;
+	private String color;
+	private Integer order;
 	private MenuResponse menu;
-	private ModuleResponse module;
-	private List<DetailGroupeModuleResponse> listDetailGroupeModule;
+	private List<MenuResponse> listMenu;
 	private List<ModuleResponse> listModule;
-	public ModuleResponse(Integer id)
+	public MenuResponse(Integer id)
 	{
 		super();
 		this.id = id;

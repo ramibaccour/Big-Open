@@ -6,12 +6,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
 import java.util.List;
+import org.springframework.data.geo.Point;
+import java.time.LocalDateTime;
 import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotNull;
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "lng")
 public class Lng 
 {

@@ -8,17 +8,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ModuleRequest
+public class MenuRequest
 {
 	private Integer id;
 	private String nomLng1;
 	private String nomLng2;
 	private String nomLng3;
+	private String icon;
+	private String componont;
+	private String routerlink;
+	private boolean selected;
+	private String selectedColor;
+	private String color;
+	private Integer order;
 	private MenuRequest menu;
-	private ModuleRequest module;
-	private List<DetailGroupeModuleRequest> listDetailGroupeModule;
+	private List<MenuRequest> listMenu;
 	private List<ModuleRequest> listModule;
-	public ModuleRequest(Integer id)
+	public MenuRequest(Integer id)
 	{
 		super();
 		this.id = id;

@@ -17,32 +17,8 @@ export class MainComponent implements OnInit {
     {
       this.generalService.headers = new HttpHeaders
       ({ 
-          // 'Content-Type': 'application/json',
           'Authorization':  'Bearer ' + this.generalService.user.jwt
       });
-      //this.generalService.menus = this.makeTree(this.generalService.user.userResponse.role.menus,"");
     }
   }
-
-  // makeTree(nodes, parentId) 
-  // {
-  //     return nodes
-  //       .filter((node) => node.idParent === parentId)
-  //       .reduce(
-  //         (tree, node) => 
-  //         [
-  //           ...tree,
-  //           this.makeTree(nodes, node.id).length>0?
-  //           {
-  //             ...node,
-  //             items: this.makeTree(nodes, node.id)
-  //           }:
-  //           {
-  //             ...node,
-  //           },
-  //         ],
-  //         [],
-  //       )
-  // }
-
 }
