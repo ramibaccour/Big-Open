@@ -7,6 +7,20 @@
 {
     margin-left: 10px;
 }
+.color-white
+{
+    color: white;
+}
+.bar-separateur
+{
+    margin: 0 20px 0 10px;
+    font-size: 1.3rem;
+
+}
+.logo-text
+{
+    font-size: 1.50rem;
+}
 .menu
 {
     color: rgb(34, 34, 34);
@@ -22,7 +36,7 @@
     justify-content: space-between;
     flex-wrap: nowrap;
     padding: 10px;
-    background: #f8f9fa;
+    background: var(--color);
     border: 1px solid #dee2e6;
     align-items: center;
 }
@@ -43,10 +57,7 @@ a
 }
 @media screen and (min-width: 680px)
 {
-    #menu-icon
-    {
-        display: none;
-    }
+    
 }
 @media screen and (max-width: 320px)
 {
