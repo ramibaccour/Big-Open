@@ -5,13 +5,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class LngResponseError
+public class CollaborateurPersonneResponseError
 {
 	private String id;
-	private String name;
-	private String rtl;
-	private String byDefault;
-	private String code;
-	private String attribut;
 	private boolean haveError;
 }

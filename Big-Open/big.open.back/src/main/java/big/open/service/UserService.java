@@ -2,6 +2,8 @@ package big.open.service;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import big.open.entity.Lng;
 import big.open.entity.User;
 import big.open.payload.request.UserRequest;
 import big.open.payload.response.UserResponse;
@@ -53,6 +55,11 @@ public class UserService
 				String jwt = jwtUtils.generateJwtToken(userRequest.getUsername());										
 				UserResponse userResponse = ObjectMapperUtility.map(user.get(), UserResponse.class);
 				userResponse.setJwt(jwt);
+				if(userRequest.getLng() != null)
+				{
+					user.get().setLng(ObjectMapperUtility.map(userRequest.getLng(), Lng.class));
+					userRepository.save(user.get());
+				}
 				return userResponse;
 			}
 		}

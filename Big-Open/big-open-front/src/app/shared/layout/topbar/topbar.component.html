@@ -12,13 +12,12 @@
             
         </div>
         
-        <div >
-            <span (click)="profile()"  *ngIf="generalService.user && generalService.user.userResponse" class="name-user">
-                Hi {{generalService.user.userResponse.fullName}}
+        <div class="display-flex">
+            <span (click)="profile()"  *ngIf="generalService.user" class="name-user">
+                Hi {{generalService.user.personne[generalService.getLng("nom")]}}
             </span>
-            <button mat-mini-fab class="user">
-                <mat-icon>account_circle</mat-icon>
-            </button>
+            <img class="avatar" src="assets/images/rami.jpg">
+            
         </div>
     </div>
    

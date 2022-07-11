@@ -7,10 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-import java.util.List;
-import org.springframework.data.geo.Point;
-import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -40,4 +36,9 @@ public class User
 	@ManyToOne()
 	@JoinColumn(name = "id_groupe_module")
 	private GroupeModule groupeModule;
+
+	@ManyToOne()
+	@JoinColumn(name = "id_personne")
+	private Personne personne;
+	
 }

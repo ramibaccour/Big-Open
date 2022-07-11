@@ -13,6 +13,7 @@ public class UserResponseError
 	private String isDeleted;
 	private String Lng;
 	private String message;
+	private String personne;
 	private boolean haveError;
 	public UserResponseError(String message)
 	{

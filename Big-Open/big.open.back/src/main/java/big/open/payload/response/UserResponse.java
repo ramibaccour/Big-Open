@@ -2,10 +2,7 @@ package big.open.payload.response;
 import big.open.payload.response.error.UserResponseError;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import java.util.List;
-import java.time.LocalDateTime;
 import lombok.NoArgsConstructor;
-import org.springframework.data.geo.Point;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -19,6 +16,7 @@ public class UserResponse
 	private GroupeModuleResponse groupeModule;
 	private UserResponseError responseError;
 	private LngResponse lng;
+	private PersonneResponse personne;
 	public UserResponse(Integer id)
 	{
 		super();

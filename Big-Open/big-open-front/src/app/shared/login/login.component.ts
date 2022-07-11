@@ -53,6 +53,8 @@ export class LoginComponent implements OnInit
   setLng(lng)
   {
     this.generalService.switchLang(lng.code)
+    this.generalService.lng = lng.attribut;
+    this.user.lng = lng;
   }
   showPassword()
   {
@@ -77,6 +79,7 @@ export class LoginComponent implements OnInit
       if(user.responseError == null && user.jwt)
       {
         this.generalService.user = user;
+        this.generalService.lng = user.lng.attribut;
         if(this.resterConnecter)
           localStorage.setItem("user",JSON.stringify(user));   
         this.router.navigate(["/accueille"])

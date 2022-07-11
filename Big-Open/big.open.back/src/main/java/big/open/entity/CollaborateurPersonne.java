@@ -17,22 +17,16 @@ import javax.validation.constraints.NotNull;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "lng")
-public class Lng 
+@Table(name = "collaborateur_personne")
+public class CollaborateurPersonne 
 {
 	@NotNull()
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private Integer id;
-	@Column(name="name")
-	private String name;
-	@Column(name="rtl")
-	private boolean rtl;
-	@Column(name="by_default")
-	private boolean byDefault;
-	@Column(name="code")
-	private String code;
-	@Column(name="attribut")
-	private String attribut;
+	@Transient
+	private Collaborateur collaborateur;
+	@Transient
+	private Personne personne;
 }

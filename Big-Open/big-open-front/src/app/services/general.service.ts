@@ -25,6 +25,7 @@ export class GeneralService
   modeModal = false;
   listeSelectable;
   dialogRef;
+  lng;
   erreur = ()=>
   {
     this.showSpinner = false;
@@ -239,5 +240,9 @@ export class GeneralService
           ],
           [],
         )
+  }
+  getLng(attibut)
+  {
+     return attibut + this.lng ;
   }
 }
