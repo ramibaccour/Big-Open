@@ -20,6 +20,11 @@
 .logo-text
 {
     font-size: 1.50rem;
+    text-decoration: none;
+}
+.font-weight-500
+{
+    font-weight: 500;
 }
 .menu
 {
@@ -51,8 +56,7 @@ a
 .name-user
 {
     cursor: pointer;
-    margin-right: 10px;
-    color: #222b45;
+    margin-left: 10px;
     font-family: Open Sans,sans-serif;
 }
 .avatar
@@ -63,6 +67,10 @@ a
     border-style: solid;
     border-width: 2px;
     border-color: white;
+}
+.cursor-pointer
+{
+    cursor: pointer;
 }
 @media screen and (min-width: 680px)
 {

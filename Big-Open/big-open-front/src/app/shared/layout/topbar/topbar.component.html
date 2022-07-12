@@ -6,18 +6,21 @@
                 <mat-icon class="color-white">menu</mat-icon>
             </button>
             <span class="color-white bar-separateur">|</span>
-            <span class="color-white logo-text">BIG-OPEN</span>
+            <a class="color-white logo-text" routerLink="">BIG-OPEN</a>
             <!-- <img id="logo" src="assets/images/logo.png"> -->
 
             
         </div>
         
-        <div class="display-flex">
-            <span (click)="profile()"  *ngIf="generalService.user" class="name-user">
-                Hi {{generalService.user.personne[generalService.getLng("nom")]}}
+        <div class="display-flex font-weight-500">
+            <div class="color-white" *ngFor="let lng of generalService.listLng;let i = index" >
+                <span class="cursor-pointer" (click)="generalService.setLng(lng)"> {{lng.name}} </span> <span *ngIf="i < generalService.listLng.length-1">&nbsp;|&nbsp;</span>
+            </div>
+            <span class="color-white bar-separateur">|</span>
+            <img class="avatar cursor-pointer" src="assets/images/rami.jpg">
+            <span (click)="profile()"  *ngIf="generalService.user" class="name-user color-white">
+                {{generalService.user.personne[generalService.getLng("nom")] + " " + generalService.user.personne[generalService.getLng("prenom")]}}
             </span>
-            <img class="avatar" src="assets/images/rami.jpg">
-            
         </div>
     </div>
    

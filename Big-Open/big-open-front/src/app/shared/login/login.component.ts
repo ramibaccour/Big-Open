@@ -11,10 +11,10 @@ export class LoginComponent implements OnInit
   user;
   userResponse;
   resterConnecter = false;
-  listLng;
+  
   typeInput = "password";
   iconPassword = "visibility";
-  constructor(private generalService : GeneralService, private router: Router) { }
+  constructor(public generalService : GeneralService, private router: Router) { }
 
   ngOnInit(): void 
   {
@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit
       var fn = (listLng)=>
       {
         this.generalService.showSpinner = false;
-        this.listLng = listLng.listLngResponse;
+        this.generalService.listLng = listLng.listLngResponse;
+        localStorage.setItem("listLng", JSON.stringify(this.generalService.listLng))
         this.setTranslate();
       }
       this.generalService.httpGet(this.generalService.urlFindAllLng,fn, this.generalService.erreur )
@@ -38,9 +39,9 @@ export class LoginComponent implements OnInit
   }
   setTranslate()
   {
-    var listLng = this.listLng.map(lng => {return lng.code})
+    var listLng = this.generalService.listLng.map(lng => {return lng.code})
     this.generalService.translate.addLangs(listLng);
-    var defaulLng = this.listLng.find(lng => {return lng.byDefault == 1});
+    var defaulLng = this.generalService.listLng.find(lng => {return lng.byDefault == 1});
     if(defaulLng)
       this.generalService.translate.setDefaultLang(defaulLng.code);
   }

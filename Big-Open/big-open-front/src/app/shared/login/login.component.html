@@ -3,8 +3,8 @@
         <div>
             <div class="color-black">
                 <div class="flex-end">
-                    <div *ngFor="let lng of listLng;let i = index" >
-                        <span class="cursor-pointer" (click)="setLng(lng)"> {{lng.name}} </span> <span *ngIf="i < listLng.length-1">&nbsp;|&nbsp;</span>
+                    <div *ngFor="let lng of generalService.listLng;let i = index" >
+                        <span class="cursor-pointer" (click)="setLng(lng)"> {{lng.name}} </span> <span *ngIf="i < generalService.listLng.length-1">&nbsp;|&nbsp;</span>
                     </div>
                 </div>
                 <br>

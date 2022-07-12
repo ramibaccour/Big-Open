@@ -26,6 +26,7 @@ export class GeneralService
   listeSelectable;
   dialogRef;
   lng;
+  listLng;
   erreur = ()=>
   {
     this.showSpinner = false;
@@ -242,7 +243,16 @@ export class GeneralService
         )
   }
   getLng(attibut)
+  {    
+    return attibut + this.lng ;
+  }
+  
+  setLng(lng)
   {
-     return attibut + this.lng ;
+    this.switchLang(lng.code)
+    this.lng = lng.attribut;
+    this.user.lng = lng;
+    if(localStorage.getItem("user"))
+      localStorage.setItem("user",JSON.stringify(this.user));
   }
 }

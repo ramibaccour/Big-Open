@@ -12,10 +12,15 @@ export class AppComponent implements OnInit
   title = 'Big-Open-Front';
   ngOnInit(): void 
   {
-    var userString  = localStorage.getItem("user");
+    var userString  ;
+    userString  = localStorage.getItem("user");
     if(userString && userString.length>0)
     {
       this.generalService.user = JSON.parse(userString);
+      this.generalService.lng = this.generalService.user.lng.attribut;
+      var listLng;
+      listLng = localStorage.getItem("listLng")
+      this.generalService.listLng = JSON.parse(listLng);
     }    
   }
 }
