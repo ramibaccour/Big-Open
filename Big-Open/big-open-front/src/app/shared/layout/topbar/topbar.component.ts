@@ -1,6 +1,6 @@
 import {  Component, OnInit, ViewChild } from '@angular/core';
 import { GeneralService } from 'src/app/services/general.service';
-
+declare var $;
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
@@ -8,21 +8,32 @@ import { GeneralService } from 'src/app/services/general.service';
 })
 export class TopbarComponent implements OnInit 
 {
-
+  showMenu = false;
   constructor(public generalService : GeneralService) { }
-  showMenu : boolean = false;
   ngOnInit() 
   {
   }
-    profile()
+  doMenu()
+  {
+    if ($(window).width() >= 681)
     {
-      this.generalService.router.navigate(['utilisateur/profile']);
+      this.generalService.showMenu = !this.generalService.showMenu;
     }
-    deconnection()
+    else
     {
-        localStorage.removeItem('user');
-        this.generalService.user = null;
-        this.generalService.headers = null;
-        this.generalService.router.navigate(["login"]);
+      this.showMenu = !this.showMenu;
+
     }
+  }
+  profile()
+  {
+    this.generalService.router.navigate(['utilisateur/profile']);
+  }
+  deconnection()
+  {
+      localStorage.removeItem('user');
+      this.generalService.user = null;
+      this.generalService.headers = null;
+      this.generalService.router.navigate(["login"]);
+  }
 }

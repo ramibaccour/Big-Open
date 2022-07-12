@@ -72,6 +72,10 @@ a
 {
     cursor: pointer;
 }
+.upper-case
+{
+    text-transform : uppercase
+}
 @media screen and (min-width: 680px)
 {
     
@@ -79,6 +83,13 @@ a
 @media screen and (max-width: 320px)
 {
     #logo
+    {
+        display: none;
+    }
+}
+@media screen and (max-width: 560px)
+{
+    .name-user
     {
         display: none;
     }

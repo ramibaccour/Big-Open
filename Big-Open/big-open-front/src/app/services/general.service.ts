@@ -27,6 +27,7 @@ export class GeneralService
   dialogRef;
   lng;
   listLng;
+  showMenu = false;
   erreur = ()=>
   {
     this.showSpinner = false;

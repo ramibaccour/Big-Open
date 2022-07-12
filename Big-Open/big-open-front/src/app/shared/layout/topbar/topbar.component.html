@@ -2,7 +2,7 @@
     <div class="display-flex-between">
         <div class="display-flex">
                 
-            <button mat-icon-button  id="menu-icon"  (click)="showMenu = true" class="menu">
+            <button mat-icon-button  id="menu-icon"  (click)="doMenu()" class="menu">
                 <mat-icon class="color-white">menu</mat-icon>
             </button>
             <span class="color-white bar-separateur">|</span>
@@ -13,12 +13,12 @@
         </div>
         
         <div class="display-flex font-weight-500">
-            <div class="color-white" *ngFor="let lng of generalService.listLng;let i = index" >
-                <span class="cursor-pointer" (click)="generalService.setLng(lng)"> {{lng.name}} </span> <span *ngIf="i < generalService.listLng.length-1">&nbsp;|&nbsp;</span>
+            <div class="color-white upper-case" *ngFor="let lng of generalService.listLng;let i = index" >
+                <span class="cursor-pointer" (click)="generalService.setLng(lng)"> {{lng.code}} </span> <span *ngIf="i < generalService.listLng.length-1">&nbsp;|&nbsp;</span>
             </div>
             <span class="color-white bar-separateur">|</span>
-            <img class="avatar cursor-pointer" src="assets/images/rami.jpg">
-            <span (click)="profile()"  *ngIf="generalService.user" class="name-user color-white">
+            <img (click)="op.toggle($event)" class="avatar cursor-pointer" src="assets/images/rami.jpg">
+            <span (click)="op.toggle($event)" *ngIf="generalService.user" class="name-user color-white">
                 {{generalService.user.personne[generalService.getLng("nom")] + " " + generalService.user.personne[generalService.getLng("prenom")]}}
             </span>
         </div>
@@ -27,11 +27,11 @@
 
 </div>
 
-<div  [style]="{width: '250px'}">
+<p-overlayPanel #op  [style]="{width: '250px'}">
     <a (click)="profile()" >Profile</a>
     <hr>
     <a (click)="deconnection()">Déconnection</a>
-</div>
-<div  >
+</p-overlayPanel>
+<p-sidebar [(visible)]="showMenu" [style]="{width:'85%'}" [showCloseIcon]="false" [baseZIndex]="10000">
     <app-menu></app-menu>
-</div>
+</p-sidebar>

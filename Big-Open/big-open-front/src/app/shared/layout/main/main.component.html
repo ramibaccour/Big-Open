@@ -1,6 +1,6 @@
 <app-topbar></app-topbar>
 <div class="responsive-body">
-    <div id="app-menu">
+    <div *ngIf="generalService.showMenu" id="app-menu">
         <app-menu></app-menu>
     </div>
     <div id="body-content">

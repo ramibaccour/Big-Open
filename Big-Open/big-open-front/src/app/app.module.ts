@@ -20,7 +20,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';   
 import {MomentDateModule} from '@angular/material-moment-adapter';
@@ -33,6 +32,11 @@ import { MenuComponent } from './shared/layout/menu/menu.component';
 import { TableComponent } from './shared/utility/table/table.component';
 import { DialogComponent } from './shared/utility/dialog/dialog.component';
 import { LoginComponent } from './shared/login/login.component';
+
+//------------------------Begin Primeng----------------------
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {SidebarModule} from 'primeng/sidebar';
+//------------------------End Primeng----------------------
 
 //------------------------Begin Translate----------------------
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -74,13 +78,18 @@ import { AccueilleComponent } from './components/accueille/accueille.component';
   MatTooltipModule,
   MatSnackBarModule,
   MatDialogModule,
-  MatCardModule,
   MatProgressSpinnerModule,  
   MatFormFieldModule,
   MomentDateModule,
   MatPaginatorModule,
   MatExpansionModule,
   //------------------------End material----------------------
+  
+  //------------------------Begin Primeng----------------------
+  OverlayPanelModule,
+  SidebarModule,
+  //------------------------End Primeng----------------------
+
   //------------------------Begin Translate----------------------
   TranslateModule.forRoot(
   {
