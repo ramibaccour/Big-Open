@@ -28,6 +28,7 @@ export class GeneralService
   lng;
   listLng;
   showMenu = false;
+  menus;
   erreur = ()=>
   {
     this.showSpinner = false;
@@ -255,5 +256,11 @@ export class GeneralService
     this.user.lng = lng;
     if(localStorage.getItem("user"))
       localStorage.setItem("user",JSON.stringify(this.user));
+  }
+  
+  generateMenu()
+  {
+    this.menus = this.user.groupeModule.listDetailGroupeModule.filter(detailGroupeModule => {return detailGroupeModule.valeur == 1}).map(menu => menu.module.menu? menu.module.menu : {id : -1})
+    this.menus = this.menus.filter(menu => menu.id != -1);
   }
 }

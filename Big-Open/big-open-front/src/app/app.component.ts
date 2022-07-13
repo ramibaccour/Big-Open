@@ -21,6 +21,7 @@ export class AppComponent implements OnInit
       var listLng;
       listLng = localStorage.getItem("listLng")
       this.generalService.listLng = JSON.parse(listLng);
+      this.generalService.generateMenu();
     }    
   }
 }

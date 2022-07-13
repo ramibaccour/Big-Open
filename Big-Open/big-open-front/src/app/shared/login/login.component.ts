@@ -81,6 +81,7 @@ export class LoginComponent implements OnInit
       {
         this.generalService.user = user;
         this.generalService.lng = user.lng.attribut;
+        this.generalService.generateMenu();
         if(this.resterConnecter)
           localStorage.setItem("user",JSON.stringify(user));   
         this.router.navigate(["/accueille"])

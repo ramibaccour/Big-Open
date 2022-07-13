@@ -19,7 +19,7 @@ export class RouteGuardService implements CanActivate
     else
       return this.generalService.router.navigate(["login"]);
     var url = this.generalService.getResolvedUrl(route);
-    var myMeny = user.groupeModule.listDetailGroupeModule.find(groupeModule =>{return  groupeModule.module.menu.routerlink == url})
+    var myMeny = true;//user.groupeModule.listDetailGroupeModule.find(groupeModule =>{return  groupeModule.module.menu.routerlink == url})
     // user.userResponse.role.menus.find(menu => 
     // {
     //   return menu.routerLink.find(routerLink => 

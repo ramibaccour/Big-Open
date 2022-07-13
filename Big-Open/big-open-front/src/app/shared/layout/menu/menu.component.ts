@@ -12,6 +12,7 @@ export class MenuComponent implements OnInit
   menus;
   ngOnInit(): void 
   {
+    this.menus = this.generalService.menus;
   }
   getParentNode()
   {
