@@ -7,8 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.util.List;
-import org.springframework.data.geo.Point;
-import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -41,6 +39,8 @@ public class Societe
 	private Integer idMonnaie;
 	@Column(name="id_image")
 	private Integer idImage;
+	@Column(name="id_default_menu")
+	private Integer idDefaultMenu;
 	@Transient
 	private List<Coordonnee> listCoordonnee;
 	@Transient

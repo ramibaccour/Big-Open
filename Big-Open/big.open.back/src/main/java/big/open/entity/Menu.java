@@ -43,6 +43,10 @@ public class Menu
 	private String color;
 	@Column(name="order")
 	private Integer order;
+	@Column(name="menu_principale")
+	private Integer menuPrincipale;	
+	@Column(name="id_parent")
+	private Integer idParent;
 	@Transient
 	private Menu menu;
 	@Transient

@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: big_open
+-- Host: 127.0.0.1    Database: big_open
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -28,6 +28,7 @@ CREATE TABLE `lng` (
   `rtl` tinyint(1) DEFAULT NULL,
   `by_default` tinyint(1) DEFAULT NULL,
   `code` varchar(45) DEFAULT NULL,
+  `attribut` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +39,7 @@ CREATE TABLE `lng` (
 
 LOCK TABLES `lng` WRITE;
 /*!40000 ALTER TABLE `lng` DISABLE KEYS */;
-INSERT INTO `lng` VALUES (1,'Française',0,1,'fr'),(2,'English',0,0,'en');
+INSERT INTO `lng` VALUES (1,'Française',0,1,'fr','Lng1'),(2,'English',0,0,'en','Lng2');
 /*!40000 ALTER TABLE `lng` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05  8:15:24
+-- Dump completed on 2022-07-14 10:32:32

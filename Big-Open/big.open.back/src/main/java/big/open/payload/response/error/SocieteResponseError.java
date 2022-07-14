@@ -16,5 +16,6 @@ public class SocieteResponseError
 	private String idTva;
 	private String idMonnaie;
 	private String idImage;
+	private Integer idDefaultMenu;
 	private boolean haveError;
 }

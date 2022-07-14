@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: big_open
+-- Host: 127.0.0.1    Database: big_open
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -29,11 +29,14 @@ CREATE TABLE `user` (
   `is_deleted` int DEFAULT NULL,
   `id_groupe_module` int DEFAULT NULL,
   `id_lng` int DEFAULT NULL,
+  `id_personne` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `id_groupe_module_idx` (`id_groupe_module`),
   KEY `id_lng_idx` (`id_lng`),
+  KEY `id_personne_user_idx` (`id_personne`),
   CONSTRAINT `id_groupe_module` FOREIGN KEY (`id_groupe_module`) REFERENCES `groupe_module` (`id`),
-  CONSTRAINT `id_lng` FOREIGN KEY (`id_lng`) REFERENCES `lng` (`id`)
+  CONSTRAINT `id_lng` FOREIGN KEY (`id_lng`) REFERENCES `lng` (`id`),
+  CONSTRAINT `id_personne_user` FOREIGN KEY (`id_personne`) REFERENCES `personne` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -43,7 +46,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (9,'rami','$2a$10$vgjmlKv1U3UEpmhqYIMjTeUZ4hqu4/VPBBSmfZMEcryjV4il8XAAG',0,NULL,1);
+INSERT INTO `user` VALUES (9,'rami','$2a$10$vgjmlKv1U3UEpmhqYIMjTeUZ4hqu4/VPBBSmfZMEcryjV4il8XAAG',0,1,1,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05  8:15:19
+-- Dump completed on 2022-07-14 10:32:31

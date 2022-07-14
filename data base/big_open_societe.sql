@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: big_open
+-- Host: 127.0.0.1    Database: big_open
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -32,7 +32,13 @@ CREATE TABLE `societe` (
   `id_tva` int DEFAULT NULL,
   `id_monnaie` int DEFAULT NULL,
   `id_image` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `id_default_menu` int DEFAULT NULL,
+  `date_debut_abonnement` datetime DEFAULT NULL,
+  `date_fin_abonnement` datetime DEFAULT NULL,
+  `type_achat` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_default_menu_sosiete_idx` (`id_default_menu`),
+  CONSTRAINT `id_default_menu_sosiete` FOREIGN KEY (`id_default_menu`) REFERENCES `menu` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -54,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05  8:15:23
+-- Dump completed on 2022-07-14 10:32:31

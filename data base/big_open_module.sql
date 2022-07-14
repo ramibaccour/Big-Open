@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: big_open
+-- Host: 127.0.0.1    Database: big_open
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -27,13 +27,16 @@ CREATE TABLE `module` (
   `nom_lng1` varchar(45) DEFAULT NULL,
   `nom_lng2` varchar(45) DEFAULT NULL,
   `nom_lng3` varchar(45) DEFAULT NULL,
-  `Id_parent` int DEFAULT NULL,
+  `id_parent` int DEFAULT NULL,
+  `id_menu` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_idx` (`Id_parent`),
-  KEY `id_idx2` (`Id_parent`),
-  KEY `id_idx_Id_parent` (`Id_parent`),
-  CONSTRAINT `Id_parent` FOREIGN KEY (`Id_parent`) REFERENCES `module` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `id_idx` (`id_parent`),
+  KEY `id_idx2` (`id_parent`),
+  KEY `id_idx_Id_parent` (`id_parent`),
+  KEY `id_menu_module_idx` (`id_menu`),
+  CONSTRAINT `id_menu_module` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id`),
+  CONSTRAINT `Id_parent` FOREIGN KEY (`id_parent`) REFERENCES `module` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +45,7 @@ CREATE TABLE `module` (
 
 LOCK TABLES `module` WRITE;
 /*!40000 ALTER TABLE `module` DISABLE KEYS */;
+INSERT INTO `module` VALUES (1,'Big Open','Big Open','Big Open',NULL,NULL),(2,'Gestion commerciale','Gestion commerciale','Gestion commerciale',1,NULL),(3,'Accueil','Accueil','Accueil',2,1);
 /*!40000 ALTER TABLE `module` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05  8:15:25
+-- Dump completed on 2022-07-14 10:32:32

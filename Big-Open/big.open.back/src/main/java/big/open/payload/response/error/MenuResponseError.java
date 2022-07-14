@@ -18,5 +18,6 @@ public class MenuResponseError
 	private String selectedColor;
 	private String color;
 	private String order;
+	private String menuPrincipale;
 	private boolean haveError;
 }

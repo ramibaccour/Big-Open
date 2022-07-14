@@ -1,8 +1,8 @@
-<div class="menu-margin" id="menu">
+<!-- <div class="menu-margin" id="menu">
     <div *ngFor="let menu of getParentNode()">
         <div (click)="goToMenu(menu)" class="item-menu display-flex">
                 <button class="btn-hover"  mat-button [ngStyle]="{color : (menu.selected && getSubParentNode(menu).length == 0)? menu.selectedColor : menu.color}">
-                    <!-- {{generalService.console(menu)}} -->
+
                     <mat-icon *ngIf="menu.icon && menu.componont=='material'">{{menu.icon}}</mat-icon>
                     <i *ngIf="menu.icon && menu.componont=='prime-ng'" [ngClass]="menu.icon"></i>
                     {{menu.name}}
@@ -38,4 +38,5 @@
             
         </div>
     </div>
-</div>
+</div> -->
+<p-menu [model]="menus"></p-menu>

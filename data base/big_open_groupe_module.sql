@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: big_open
+-- Host: 127.0.0.1    Database: big_open
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -28,7 +28,7 @@ CREATE TABLE `groupe_module` (
   `nom_lng2` varchar(45) DEFAULT NULL,
   `nom_lng3` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `groupe_module` (
 
 LOCK TABLES `groupe_module` WRITE;
 /*!40000 ALTER TABLE `groupe_module` DISABLE KEYS */;
+INSERT INTO `groupe_module` VALUES (1,'Admin','Admin','Admin');
 /*!40000 ALTER TABLE `groupe_module` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05  8:15:24
+-- Dump completed on 2022-07-14 10:32:32

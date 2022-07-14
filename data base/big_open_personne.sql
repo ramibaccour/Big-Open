@@ -16,31 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `collaborateur`
+-- Table structure for table `personne`
 --
 
-DROP TABLE IF EXISTS `collaborateur`;
+DROP TABLE IF EXISTS `personne`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `collaborateur` (
-  `id` int NOT NULL,
-  `raison_sociale` varchar(45) DEFAULT NULL,
-  `matricule_fiscal` varchar(45) DEFAULT NULL,
-  `delai_paiement` int DEFAULT NULL,
-  `unite_delai_paiement` varchar(45) DEFAULT NULL,
-  `type_article_prix` varchar(45) DEFAULT NULL,
-  `type_collaborateur` varchar(45) DEFAULT NULL,
+CREATE TABLE `personne` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nom_lng1` varchar(45) DEFAULT NULL,
+  `nom_lng2` varchar(45) DEFAULT NULL,
+  `nom_lng3` varchar(45) DEFAULT NULL,
+  `prenom_lng1` varchar(45) DEFAULT NULL,
+  `prenom_lng2` varchar(45) DEFAULT NULL,
+  `prenom_lng3` varchar(45) DEFAULT NULL,
+  `civilite` varchar(45) DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `collaborateur`
+-- Dumping data for table `personne`
 --
 
-LOCK TABLES `collaborateur` WRITE;
-/*!40000 ALTER TABLE `collaborateur` DISABLE KEYS */;
-/*!40000 ALTER TABLE `collaborateur` ENABLE KEYS */;
+LOCK TABLES `personne` WRITE;
+/*!40000 ALTER TABLE `personne` DISABLE KEYS */;
+INSERT INTO `personne` VALUES (1,'rami','rami2','rami3','baccour','baccour2','baccour3','tunisien',NULL);
+/*!40000 ALTER TABLE `personne` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

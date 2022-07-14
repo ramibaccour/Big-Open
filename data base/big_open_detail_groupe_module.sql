@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: big_open
+-- Host: 127.0.0.1    Database: big_open
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `detail_groupe_module`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `detail_groupe_module` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `id_groupe_module` int DEFAULT NULL,
   `id_module` int DEFAULT NULL,
   `valeur` tinyint DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `detail_groupe_module` (
   KEY `module_detai_idx` (`id_module`),
   CONSTRAINT `det_groupe_module` FOREIGN KEY (`id_groupe_module`) REFERENCES `groupe_module` (`id`),
   CONSTRAINT `module_detai` FOREIGN KEY (`id_module`) REFERENCES `module` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `detail_groupe_module` (
 
 LOCK TABLES `detail_groupe_module` WRITE;
 /*!40000 ALTER TABLE `detail_groupe_module` DISABLE KEYS */;
+INSERT INTO `detail_groupe_module` VALUES (1,1,1,1),(2,1,2,1);
 /*!40000 ALTER TABLE `detail_groupe_module` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05  8:15:20
+-- Dump completed on 2022-07-14 10:32:31

@@ -24,6 +24,7 @@ public class MenuRequest
 	private String color;
 	private Integer order;
 	private MenuRequest menu;
+	private Integer menuPrincipale;
 	private List<MenuRequest> listMenu;
 	private List<ModuleRequest> listModule;
 	public MenuRequest(Integer id)

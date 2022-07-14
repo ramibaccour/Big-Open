@@ -36,6 +36,7 @@ import { LoginComponent } from './shared/login/login.component';
 //------------------------Begin Primeng----------------------
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 import {SidebarModule} from 'primeng/sidebar';
+import {MenuModule} from 'primeng/menu';
 //------------------------End Primeng----------------------
 
 //------------------------Begin Translate----------------------
@@ -88,6 +89,7 @@ import { AccueilleComponent } from './components/accueille/accueille.component';
   //------------------------Begin Primeng----------------------
   OverlayPanelModule,
   SidebarModule,
+  MenuModule,
   //------------------------End Primeng----------------------
 
   //------------------------Begin Translate----------------------

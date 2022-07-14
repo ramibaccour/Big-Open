@@ -2,9 +2,7 @@ package big.open.payload.response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.util.List;
-import java.time.LocalDateTime;
 import lombok.NoArgsConstructor;
-import org.springframework.data.geo.Point;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -19,6 +17,7 @@ public class SocieteResponse
 	private Integer idTva;
 	private Integer idMonnaie;
 	private Integer idImage;
+	private Integer idDefaultMenu;
 	private List<CoordonneeResponse> listCoordonnee;
 	private List<ImageResponse> listImage;
 	public SocieteResponse(Integer id)
